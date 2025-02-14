@@ -4203,7 +4203,7 @@ terminals and empty or at-end files.  In Common Lisp, we must assume record size
  (load eval)
  (unembed 'system:universal-error-handler)
  (embed 'system:universal-error-handler
-            '(lambda (type correctable? op
+            (lambda (type correctable? op
                            continue-string error-string &rest args)
                (block
                 nil
