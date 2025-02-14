@@ -48441,9 +48441,8 @@ Here I'll try to outline the interp database write procedure
     (setq modemapspos (file-position out))
     (print (database-modemaps struct) out)
     (finish-output out)
-    (setq obj
-     (pathname-name
-       (first (last (pathname-directory (database-object struct))))))
+    (let ((dob (database-object struct)))
+       (setq obj (if dob (pathname-name (first (last (pathname-directory dob)))) "NIL")))
     (setq concategory (database-constructorcategory struct))
     (if concategory  ; if category then write data else write nil
      (progn
