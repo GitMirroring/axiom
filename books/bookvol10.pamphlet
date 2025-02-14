@@ -17563,10 +17563,10 @@ ${MID}/%.o: ${MID}/%.lsp
 	@ echo sa08 compiling $*.lsp to $*.o
 	@ (cd ${MID} ; \
 	  if [ -z "${NOISE}" ] ; then \
-	   echo '(progn (in-package (quote boot)) (compile-file "$*.lsp" :output-file "$*.o"))'\
+	   echo '(progn (in-package "BOOT") (compile-file "$*.lsp" :output-file "$*.o"))'\
             | ${DEPSYS} ; \
 	  else \
-	   echo '(progn (in-package (quote boot)) (compile-file "$*.lsp" :output-file "$*.o"))'\
+	   echo '(progn (in-package "BOOT") (compile-file "$*.lsp" :output-file "$*.o"))'\
            | ${DEPSYS} 1>/dev/null 2>/dev/null ; \
 	  fi )
 	@ cp ${MID}/$*.o ${OUT}/$*.o

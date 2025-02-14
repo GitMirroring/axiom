@@ -2013,7 +2013,7 @@ do the compile, and then rename the result back to code.o.
     (BOOT::SPADTEX . |stex|)
     (BOOT::SPADOUT . |spout|)))
 
-(in-package 'boot)
+(in-package "BOOT")
 
 (defvar *npPCff* nil "rewrite flets, using global scoping")
 (defun npPCff () (and (funcall *npPCff*) (|npPush| (list (|npPop1|)))))
