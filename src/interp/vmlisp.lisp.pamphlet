@@ -1320,13 +1320,16 @@ In GCL 2.5:
 (defun reclaim () (gbc t))
 
 (defun BPINAME (func)
-  (if (functionp func)
-      (cond ((symbolp func) func)
-            ((and (consp func) (eq (car func) 'LAMBDA-BLOCK))
-              (cadr func))
-            ((compiled-function-p func)
-             (system:compiled-function-name func))
-            ('t func))))
+  (typecase func
+    (symbol func)
+    ((cons (eql lambda-block) t) (cadr func))
+    (function
+     (cond (#.(fboundp 'function-lambda-expression)
+	    (multiple-value-bind (x y z) (function-lambda-expression func)
+	      (or (and (symbolp z) (fboundp z) z) func)))
+	   ((compiled-function-p func)
+            (system:compiled-function-name func))
+           (func)))))
 
 (defun LISTOFQUOTES (bpi)
  (declare (ignore bpi))
