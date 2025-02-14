@@ -541,8 +541,7 @@ LAYER0BOOTSTRAP=\
   ${MID}/STAGG.o    ${MID}/STAGG-.o   ${MID}/SYMBOL.o   ${MID}/TSETCAT.o  \
   ${MID}/TSETCAT-.o ${MID}/UFD.o      ${MID}/UFD-.o     ${MID}/ULSCAT.o   \
   ${MID}/UPOLYC.o   ${MID}/UPOLYC-.o  ${MID}/URAGG.o    ${MID}/URAGG-.o   \
-  ${MID}/VECTOR.o \
-  layer0bootstrap
+  ${MID}/VECTOR.o
 
 \end{chunk}
 \begin{chunk}{layer0 copy}
@@ -569,8 +568,7 @@ LAYER0COPY=\
   ${OUT}/STAGG.o    ${OUT}/STAGG-.o   ${OUT}/SYMBOL.o   ${OUT}/TSETCAT.o  \
   ${OUT}/TSETCAT-.o ${OUT}/UFD.o      ${OUT}/UFD-.o     ${OUT}/ULSCAT.o   \
   ${OUT}/UPOLYC.o   ${OUT}/UPOLYC-.o  ${OUT}/URAGG.o    ${OUT}/URAGG-.o   \
-  ${OUT}/VECTOR.o \
-  layer0copy
+  ${OUT}/VECTOR.o
 
 \end{chunk}
 \subsection{Layer 0}
@@ -593,8 +591,7 @@ LAYER0=\
   ${OUT}/MAGCDOC.o  ${OUT}/MSYSCMD.o \
   ${OUT}/ODEIFTBL.o ${OUT}/OM.o       ${OUT}/OMCONN.o  ${OUT}/OMDEV.o  \
   ${OUT}/OUT.o      ${OUT}/PRIMCAT.o  ${OUT}/PRINT.o   ${OUT}/PTRANFN.o \
-  ${OUT}/RFDIST.o   ${OUT}/RIDIST.o   ${OUT}/SPFCAT.o  ${OUT}/TYPE.o \
-  layer0done
+  ${OUT}/RFDIST.o   ${OUT}/RIDIST.o   ${OUT}/SPFCAT.o  ${OUT}/TYPE.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -784,11 +781,10 @@ LAYER1=\
   ${OUT}/RESLATC.o  ${OUT}/RETRACT.o  ${OUT}/RETRACT-.o ${OUT}/RMODULE.o  \
   ${OUT}/SEGBIND2.o ${OUT}/SEGCAT.o   ${OUT}/SETCATD.o  \
   ${OUT}/SEXCAT.o   ${OUT}/SGROUP.o   \
-  ${OUT}/SGROUP-.o  ${OUT}/SPACEC.o   ${OUT}/SPLNODE.o  ${OUT}/STEP.o     \
+  ${OUT}/SGROUP-.o  ${OUT}/SPACEC.o   ${OUT}/STEP.o     \
   ${OUT}/STNSR.o    \
   ${OUT}/STREAM1.o  ${OUT}/STREAM2.o  ${OUT}/STREAM3.o  ${OUT}/SUCH.o     \
-  ${OUT}/TEX1.o     ${OUT}/UDVO.o     ${OUT}/YSTREAM.o \
-  layer1done
+  ${OUT}/TEX1.o     ${OUT}/YSTREAM.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -1261,20 +1257,19 @@ LAYER2=\
   ${OUT}/BLQT.o     ${OUT}/BMODULE.o  ${OUT}/CACHSET.o  \
   ${OUT}/CHARNZ.o   ${OUT}/CHARZ.o    ${OUT}/DVARCAT.o  ${OUT}/DVARCAT-.o \
   ${OUT}/ELEMFUN.o  ${OUT}/ELEMFUN-.o ${OUT}/ESTOOLS2.o ${OUT}/EVALAB.o   \
-  ${OUT}/EVALAB-.o  ${OUT}/FAMONC.o   ${OUT}/FCOMP.o    ${OUT}/FEVALAB.o  \
-  ${OUT}/FEVALAB-.o ${OUT}/FMC.o      ${OUT}/FMFUN.o    ${OUT}/FORTFN.o   \
+  ${OUT}/EVALAB-.o  ${OUT}/FAMONC.o   ${OUT}/FCOMP.o    \
+  ${OUT}/FMC.o      ${OUT}/FMFUN.o    ${OUT}/FORTFN.o   \
   ${OUT}/FPATMAB.o  ${OUT}/FVC.o      ${OUT}/FVFUN.o    ${OUT}/GROUP.o    \
   ${OUT}/GROUP-.o   ${OUT}/IDPAG.o    ${OUT}/IDPAM.o    ${OUT}/IDPO.o     \
-  ${OUT}/INCRMAPS.o ${OUT}/INTRET.o   ${OUT}/IXAGG.o    ${OUT}/IXAGG-.o   \
+  ${OUT}/INCRMAPS.o ${OUT}/INTRET.o   \
   ${OUT}/KERNEL2.o  ${OUT}/LALG.o     ${OUT}/LALG-.o    ${OUT}/LINEXP.o   \
   ${OUT}/MODMONOM.o ${OUT}/MONADWU.o  ${OUT}/MONADWU-.o ${OUT}/MRF2.o     \
   ${OUT}/NARNG.o    ${OUT}/NARNG-.o   ${OUT}/NSUP2.o    ${OUT}/OASGP.o    \
-  ${OUT}/ODVAR.o    ${OUT}/OPQUERY.o  ${OUT}/ORDFIN.o   ${OUT}/ORDMON.o   \
-  ${OUT}/PATMATCH.o ${OUT}/PERMCAT.o  ${OUT}/PDRING.o   ${OUT}/PDRING-.o  \
+  ${OUT}/OPQUERY.o  ${OUT}/ORDFIN.o   ${OUT}/ORDMON.o   \
+  ${OUT}/PATMATCH.o ${OUT}/PDRING.o   ${OUT}/PDRING-.o  \
   ${OUT}/PLACESC.o  ${OUT}/PRSPCAT.o  \
-  ${OUT}/SDVAR.o    ${OUT}/SEGXCAT.o  ${OUT}/SUP2.o     ${OUT}/TRIGCAT.o  \
-  ${OUT}/TRIGCAT-.o ${OUT}/ULS2.o     ${OUT}/UP2.o \
-  layer2done
+  ${OUT}/SEGXCAT.o  ${OUT}/SPLNODE.o  ${OUT}/SUP2.o     ${OUT}/TRIGCAT.o  \
+  ${OUT}/TRIGCAT-.o ${OUT}/UDVO.o     ${OUT}/ULS2.o     ${OUT}/UP2.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -1717,13 +1712,11 @@ LAYER3=\
   ${OUT}/AUTOMOR.o  ${OUT}/BGAGG.o   ${OUT}/BGAGG-.o   ${OUT}/BRAGG.o    \
   ${OUT}/BRAGG-.o   ${OUT}/CARTEN2.o ${OUT}/CHARPOL.o  ${OUT}/COMPLEX2.o \
   ${OUT}/DIFEXT.o   ${OUT}/DIFEXT-.o ${OUT}/DLAGG.o    ${OUT}/DSTRCAT.o  \
-  ${OUT}/ELAGG.o    \
-  ${OUT}/ELAGG-.o   ${OUT}/ES1.o     ${OUT}/ES2.o      ${OUT}/GRMOD.o    \
-  ${OUT}/GRMOD-.o   ${OUT}/HYPCAT.o  ${OUT}/HYPCAT-.o  ${OUT}/LORER.o    \
+  ${OUT}/ES1.o     ${OUT}/ES2.o      ${OUT}/FEVALAB.o  ${OUT}/FEVALAB-.o ${OUT}/GRMOD.o    \
+  ${OUT}/GRMOD-.o   ${OUT}/HYPCAT.o  ${OUT}/HYPCAT-.o  ${OUT}/IXAGG.o   ${OUT}/IXAGG-.o   ${OUT}/LORER.o    \
   ${OUT}/MKCHSET.o  \
   ${OUT}/MODRING.o  ${OUT}/MODULE.o  ${OUT}/MODULE-.o  ${OUT}/NASRING.o  \
-  ${OUT}/NASRING-.o ${OUT}/OAMON.o   ${OUT}/SORTPAK.o  ${OUT}/ZMOD.o \
-  layer3done
+  ${OUT}/NASRING-.o ${OUT}/OAMON.o   ${OUT}/ODVAR.o    ${OUT}/PERMCAT.o  ${OUT}/SDVAR.o   ${OUT}/ZMOD.o
 
 \end{chunk}
 
@@ -1962,10 +1955,10 @@ Used by next layer: ALGEBRA ALGEBRA- BTCAT OCAMON QUAGG SKAGG
 
 LAYER4=\
   ${OUT}/ALGEBRA.o ${OUT}/ALGEBRA-.o ${OUT}/BTCAT.o  ${OUT}/BTCAT-.o \
-  ${OUT}/FMCAT.o   ${OUT}/IDPOAM.o   ${OUT}/IFAMON.o ${OUT}/GRALG.o  \
-  ${OUT}/GRALG-.o  ${OUT}/NAALG.o    ${OUT}/NAALG-.o ${OUT}/OCAMON.o \
-  ${OUT}/PRQAGG.o  ${OUT}/QUAGG.o    ${OUT}/SKAGG.o  \
-  layer4done
+  ${OUT}/ELAGG.o    \
+  ${OUT}/ELAGG-.o  ${OUT}/FMCAT.o   ${OUT}/IDPOAM.o   ${OUT}/IFAMON.o ${OUT}/GRALG.o  \
+  ${OUT}/GRALG-.o  ${OUT}/NAALG.o    ${OUT}/NAALG-.o  ${OUT}/OCAMON.o \
+  ${OUT}/PRQAGG.o  ${OUT}/QUAGG.o    ${OUT}/SKAGG.o   ${OUT}/SORTPAK.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -2070,8 +2063,7 @@ LAYER5=\
   ${OUT}/DQAGG.o   ${OUT}/FACTFUNC.o ${OUT}/FMTC.o     ${OUT}/FR2.o      \
   ${OUT}/FRAC2.o   ${OUT}/FRUTIL.o   ${OUT}/ITAYLOR.o  ${OUT}/MLO.o      \
   ${OUT}/NEWTON.o  ${OUT}/OAGROUP.o  ${OUT}/OAMONS.o   ${OUT}/OP.o       \
-  ${OUT}/PID.o     ${OUT}/RANDSRC.o  ${OUT}/UNISEG2.o  ${OUT}/XALG.o     \
-  layer5done
+  ${OUT}/PID.o     ${OUT}/RANDSRC.o  ${OUT}/XALG.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -2239,8 +2231,7 @@ LAYER6=\
   ${OUT}/LA.o       ${OUT}/MAPPKG4.o  ${OUT}/OMLO.o    ${OUT}/ORTHPOL.o  \
   ${OUT}/PRODUCT.o  ${OUT}/PADICCT.o  ${OUT}/PMPRED.o  ${OUT}/PMASS.o   \
   ${OUT}/PTFUNC2.o  ${OUT}/RADCAT.o   ${OUT}/RADCAT-.o ${OUT}/RATRET.o  \
-  ${OUT}/RADUTIL.o  ${OUT}/UPXS2.o    ${OUT}/XFALG.o   ${OUT}/ZLINDEP.o \
-  layer6done
+  ${OUT}/RADUTIL.o  ${OUT}/UNISEG2.o  ${OUT}/UPXS2.o    ${OUT}/XFALG.o   ${OUT}/ZLINDEP.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -2749,7 +2740,7 @@ LAYER7=\
   ${OUT}/BTREE.o    ${OUT}/CRAPACK.o  ${OUT}/DEQUEUE.o  ${OUT}/DIRRING.o  \
   ${OUT}/DIV.o      ${OUT}/DLIST.o    \
   ${OUT}/DRAWCX.o   ${OUT}/DRAWPT.o   ${OUT}/D01GBFA.o  ${OUT}/D02EJFA.o  \
-  ${OUT}/D03FAFA.o  ${OUT}/FAMR.o     ${OUT}/FAMR-.o    ${OUT}/FIELD.o    \
+  ${OUT}/D03FAFA.o  ${OUT}/FAMR.o     ${OUT}/FAMR-.o        \
   ${OUT}/FLASORT.o  \
   ${OUT}/FLAGG2.o   ${OUT}/FGROUP.o   ${OUT}/FM.o       ${OUT}/FM1.o      \
   ${OUT}/FPC.o      ${OUT}/FPC-.o     ${OUT}/FMONOID.o  ${OUT}/INDE.o     \
@@ -2770,8 +2761,7 @@ LAYER7=\
   ${OUT}/STACK.o    ${OUT}/STTAYLOR.o ${OUT}/TABLBUMP.o ${OUT}/TABLEAU.o  \
   ${OUT}/TOPSP.o    ${OUT}/TRANFUN.o  ${OUT}/TRANFUN-.o ${OUT}/TUBE.o     \
   ${OUT}/UDPO.o     ${OUT}/UNISEG.o   ${OUT}/VIEW.o     ${OUT}/VSPACE.o   \
-  ${OUT}/VSPACE-.o  ${OUT}/XPOLYC.o   ${OUT}/XPR.o \
-  layer7done
+  ${OUT}/VSPACE-.o  ${OUT}/XPOLYC.o   ${OUT}/XPR.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -4190,15 +4180,14 @@ LAYER8=\
   ${OUT}/MATSTOR.o  ${OUT}/ORESUP.o   ${OUT}/OREPCTO.o  ${OUT}/OREUP.o    \
   ${OUT}/PACFFC.o   \
   ${OUT}/PLOT3D.o   ${OUT}/POLYVEC.o \
-  ${OUT}/PR.o       ${OUT}/PREASSOC.o ${OUT}/PRIMARR2.o \
+  ${OUT}/PR.o       ${OUT}/PRIMARR2.o \
   ${OUT}/PROJSP.o   \
-  ${OUT}/REDORDER.o ${OUT}/SRAGG.o    ${OUT}/SRAGG-.o   ${OUT}/STREAM.o   \
+  ${OUT}/SRAGG.o    ${OUT}/SRAGG-.o   ${OUT}/STREAM.o   \
   ${OUT}/SYMPOLY.o  ${OUT}/TS.o       ${OUT}/TUPLE.o    ${OUT}/UPSCAT.o   \
   ${OUT}/UPSCAT-.o  ${OUT}/U8VEC.o    ${OUT}/U16VEC.o   ${OUT}/U32VEC.o   \
   ${OUT}/VECTCAT.o  ${OUT}/VECTCAT-.o ${OUT}/XDPOLY.o   \
   ${OUT}/XEXPPKG.o  ${OUT}/XF.o       ${OUT}/XF-.o      ${OUT}/XPBWPOLY.o \
-  ${OUT}/XPOLY.o    ${OUT}/XRPOLY.o \
-  layer8done
+  ${OUT}/XPOLY.o    ${OUT}/XRPOLY.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -4992,9 +4981,8 @@ LAYER9=\
   ${OUT}/IVECTOR.o  ${OUT}/LOCPOWC.o  \
   ${OUT}/LODO1.o    ${OUT}/LODO2.o    ${OUT}/LPOLY.o   \
   ${OUT}/LSMP.o     ${OUT}/LSMP1.o    ${OUT}/MAMA.o     ${OUT}/MATCAT2.o  \
-  ${OUT}/PROJPL.o   ${OUT}/PTCAT.o    ${OUT}/STRICAT.o  ${OUT}/TRIMAT.o  \
-  ${OUT}/U8MAT.o    ${OUT}/U16MAT.o   ${OUT}/U32MAT.o \
-  layer9done
+  ${OUT}/PREASSOC.o ${OUT}/PROJPL.o   ${OUT}/PTCAT.o    ${OUT}/REDORDER.o ${OUT}/STRICAT.o  ${OUT}/TRIMAT.o  \
+  ${OUT}/U8MAT.o    ${OUT}/U16MAT.o   ${OUT}/U32MAT.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -5301,8 +5289,7 @@ LAYER10=\
   ${OUT}/NUMQUAD.o  ${OUT}/ODESYS.o   ${OUT}/ODETOOLS.o ${OUT}/ORDFUNS.o \
   ${OUT}/PERMAN.o   ${OUT}/PFECAT.o   ${OUT}/PFECAT-.o  ${OUT}/POINT.o   \
   ${OUT}/PSEUDLIN.o ${OUT}/PTPACK.o   ${OUT}/REP2.o     ${OUT}/SETMN.o   \
-  ${OUT}/SEX.o      ${OUT}/STRING.o   ${OUT}/SYMFUNC.o  ${OUT}/VECTOR2.o \
-  layer10done
+  ${OUT}/SEX.o      ${OUT}/STRING.o   ${OUT}/SYMFUNC.o  ${OUT}/VECTOR2.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -6018,8 +6005,7 @@ LAYER11=\
   ${OUT}/TWOFACT.o  ${OUT}/UNIFACT.o  ${OUT}/UP.o       ${OUT}/UPCDEN.o   \
   ${OUT}/UPDECOMP.o ${OUT}/UPDIVP.o   ${OUT}/UPMP.o     ${OUT}/UPOLYC2.o  \
   ${OUT}/UPXSCAT.o  ${OUT}/UPSQFREE.o ${OUT}/VIEWDEF.o  ${OUT}/VIEW2D.o   \
-  ${OUT}/VOID.o     ${OUT}/WEIER.o    ${OUT}/WP.o \
-  layer11done
+  ${OUT}/VOID.o     ${OUT}/WEIER.o    ${OUT}/WP.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -9691,8 +9677,7 @@ LAYER12=\
   ${OUT}/ODPOL.o   ${OUT}/PLOT.o     ${OUT}/RFP.o     \
   ${OUT}/RMCAT2.o  ${OUT}/ROIRC.o    ${OUT}/SDPOL.o   \
   ${OUT}/SMATCAT.o ${OUT}/SMATCAT-.o ${OUT}/TUBETOOL.o ${OUT}/UPXSCCA.o \
-  ${OUT}/UPXSCCA-.o \
-  layer12done
+  ${OUT}/UPXSCCA-.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -10080,8 +10065,7 @@ LAYER13=\
   ${OUT}/DPMM.o     ${OUT}/EFUPXS.o  ${OUT}/FFINTBAS.o ${OUT}/FRIDEAL.o  \
   ${OUT}/FRIDEAL2.o ${OUT}/FRMOD.o   ${OUT}/FSAGG.o    ${OUT}/FSAGG-.o   \
   ${OUT}/IBATOOL.o  ${OUT}/INTFACT.o ${OUT}/KDAGG.o    ${OUT}/KDAGG-.o   \
-  ${OUT}/MSETAGG.o  ${OUT}/MONOGEN.o ${OUT}/MONOGEN-.o ${OUT}/NFINTBAS.o \
-  layer13done
+  ${OUT}/MSETAGG.o  ${OUT}/MONOGEN.o ${OUT}/MONOGEN-.o ${OUT}/NFINTBAS.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -10354,14 +10338,13 @@ Used by next layer: TBAGG
 
 LAYER14=\
   ${OUT}/BSD.o \
-  ${OUT}/CCLASS.o   ${OUT}/CPIMA.o   ${OUT}/FSAGG2.o   ${OUT}/GALFACT.o  \
+  ${OUT}/CCLASS.o   ${OUT}/CPIMA.o   ${OUT}/FSAGG2.o     \
   ${OUT}/IALGFACT.o ${OUT}/IBACHIN.o  ${OUT}/MMLFORM.o ${OUT}/NORMMA.o   \
   ${OUT}/ODERED.o   ${OUT}/OMSAGG.o   ${OUT}/PERM.o    ${OUT}/PERMGRP.o  \
   ${OUT}/PRIMES.o   ${OUT}/PRJALGPK.o \
   ${OUT}/PWFFINTB.o ${OUT}/RDIST.o   ${OUT}/SAE.o      \
   ${OUT}/SAEFACT.o  ${OUT}/SAERFFC.o  ${OUT}/SGCF.o    ${OUT}/SPACE3.o   \
-  ${OUT}/TBAGG.o    ${OUT}/TBAGG-.o   ${OUT}/VIEW3D.o  ${OUT}/WFFINTBS.o \
-  layer14done
+  ${OUT}/TBAGG.o    ${OUT}/TBAGG-.o   ${OUT}/VIEW3D.o  ${OUT}/WFFINTBS.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -10802,11 +10785,10 @@ Used by next layer: ALIST
 \begin{chunk}{layer15}
 
 LAYER15=\
-  ${OUT}/ALIST.o   ${OUT}/EQTBL.o   ${OUT}/GSTBL.o   ${OUT}/HASHTBL.o \
-  ${OUT}/INTABL.o  ${OUT}/INTFTBL.o ${OUT}/INTPACK.o ${OUT}/IPF.o     \
-  ${OUT}/KAFILE.o  ${OUT}/PATRES.o  ${OUT}/PDEPACK.o ${OUT}/STBL.o    \
-  ${OUT}/STRTBL.o  ${OUT}/TABLE.o   ${OUT}/TBCMPPK.o  \
-  layer15done
+  ${OUT}/ALIST.o   ${OUT}/EQTBL.o   ${OUT}/GALFACT.o  ${OUT}/GSTBL.o   ${OUT}/HASHTBL.o \
+  ${OUT}/INTABL.o  ${OUT}/INTFTBL.o ${OUT}/IPF.o     \
+  ${OUT}/KAFILE.o  ${OUT}/PATRES.o  ${OUT}/STBL.o    \
+  ${OUT}/STRTBL.o  ${OUT}/TABLE.o   ${OUT}/TBCMPPK.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -11037,7 +11019,7 @@ LAYER16=\
   ${OUT}/FS-.o      ${OUT}/FST.o      ${OUT}/FUNCTION.o ${OUT}/GDMP.o     \
   ${OUT}/GOPT.o     ${OUT}/GOPT0.o    ${OUT}/HACKPI.o   ${OUT}/IDEAL.o    \
   ${OUT}/INFCLCT.o  \
-  ${OUT}/INFORM.o   ${OUT}/INFORM1.o  ${OUT}/IPRNTPK.o  ${OUT}/IR.o       \
+  ${OUT}/INFORM.o   ${OUT}/INFORM1.o  ${OUT}/INTPACK.o  ${OUT}/IPRNTPK.o  ${OUT}/IR.o       \
   ${OUT}/ISUPS.o    ${OUT}/KERNEL.o   ${OUT}/LIB.o      ${OUT}/LMDICT.o   \
   ${OUT}/LODO.o     ${OUT}/LODOOPS.o  ${OUT}/MATRIX.o   ${OUT}/MKFLCFN.o  \
   ${OUT}/MSET.o     ${OUT}/M3D.o      ${OUT}/NAGC02.o   ${OUT}/NAGC05.o   \
@@ -11048,7 +11030,7 @@ LAYER16=\
   ${OUT}/OC.o       ${OUT}/OC-.o      ${OUT}/ODEPACK.o  ${OUT}/ODERAT.o   \
   ${OUT}/OMERR.o    ${OUT}/OMERRK.o   ${OUT}/OPTPACK.o  ${OUT}/OSI.o      \
   ${OUT}/OVAR.o     ${OUT}/PACOFF.o   ${OUT}/PACRAT.o  \
-  ${OUT}/PATTERN.o  ${OUT}/PLCS.o     ${OUT}/PMKERNEL.o ${OUT}/PMSYM.o    \
+  ${OUT}/PATTERN.o  ${OUT}/PDEPACK.o  ${OUT}/PLCS.o     ${OUT}/PMKERNEL.o ${OUT}/PMSYM.o    \
   ${OUT}/POLY.o     ${OUT}/PRIMELT.o  ${OUT}/QALGSET2.o ${OUT}/QEQUAT.o   \
   ${OUT}/QUATCAT.o  ${OUT}/QUATCAT-.o ${OUT}/RECLOS.o   ${OUT}/REP1.o     \
   ${OUT}/RESULT.o   ${OUT}/RFFACT.o   ${OUT}/RMATRIX.o  ${OUT}/ROMAN.o    \
@@ -11056,8 +11038,7 @@ LAYER16=\
   ${OUT}/SAOS.o     ${OUT}/SCELL.o  \
   ${OUT}/SEGBIND.o  ${OUT}/SEM.o      ${OUT}/SET.o      ${OUT}/SPECOUT.o  \
   ${OUT}/SQMATRIX.o ${OUT}/SWITCH.o   ${OUT}/SYMS.o     ${OUT}/SYMTAB.o   \
-  ${OUT}/SYSSOLP.o  ${OUT}/UTSCAT.o   ${OUT}/UTSCAT-.o  ${OUT}/VARIABLE.o \
-  layer16done
+  ${OUT}/SYSSOLP.o  ${OUT}/UTSCAT.o   ${OUT}/UTSCAT-.o  ${OUT}/VARIABLE.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -13092,7 +13073,7 @@ LAYER17=\
   ${OUT}/CINTSLPE.o ${OUT}/COMBF.o    ${OUT}/COMPFACT.o ${OUT}/COMPLEX.o  \
   ${OUT}/COMPLPAT.o ${OUT}/CMPLXRT.o  ${OUT}/CPMATCH.o  ${OUT}/CRFP.o     \
   ${OUT}/CTRIGMNP.o ${OUT}/D01WGTS.o  ${OUT}/D02AGNT.o  ${OUT}/D03EEFA.o  \
-  ${OUT}/DBLRESP.o  ${OUT}/D01AGNT.o  ${OUT}/DERHAM.o   ${OUT}/DFSFUN.o   \
+  ${OUT}/DBLRESP.o  ${OUT}/D01AGNT.o  ${OUT}/DFSFUN.o   \
   ${OUT}/DRAWCURV.o ${OUT}/DTP.o      \
   ${OUT}/D01TRNS.o  ${OUT}/E04NAFA.o  ${OUT}/EF.o       \
   ${OUT}/EFSTRUC.o  ${OUT}/ELFUTS.o   ${OUT}/ESTOOLS.o  ${OUT}/EXPEXPAN.o \
@@ -13109,7 +13090,7 @@ LAYER17=\
   ${OUT}/INTPM.o    ${OUT}/INTTOOLS.o ${OUT}/ITRIGMNP.o ${OUT}/JORDAN.o   \
   ${OUT}/KOVACIC.o  ${OUT}/LF.o       ${OUT}/LIE.o      ${OUT}/LODOF.o    \
   ${OUT}/LSQM.o     ${OUT}/MCMPLX.o   ${OUT}/MULTFACT.o \
-  ${MID}/clique1.spad \
+  ${OUT}/MYUP.o     ${OUT}/MYEXPR.o \
   ${OUT}/NAGF01.o   ${OUT}/NAGF02.o   ${OUT}/NAGF04.o   ${OUT}/NCEP.o     \
   ${OUT}/NLINSOL.o  ${OUT}/NSMP.o     ${OUT}/NUMERIC.o  ${OUT}/OCT.o      \
   ${OUT}/OCTCT2.o   ${OUT}/ODEPAL.o   ${OUT}/ODERTRIC.o ${OUT}/OMEXPR.o   \
@@ -13120,13 +13101,12 @@ LAYER17=\
   ${OUT}/PSETPK.o   \
   ${OUT}/QUAT.o     ${OUT}/QUATCT2.o  ${OUT}/RADFF.o    ${OUT}/RDEEF.o    \
   ${OUT}/RDEEFS.o   ${OUT}/RDIV.o     ${OUT}/RSETCAT.o  ${OUT}/RSETCAT-.o \
-  ${OUT}/RSETGCD.o  ${OUT}/RULE.o     ${OUT}/RULESET.o  ${OUT}/SD.o       \
+  ${OUT}/RULE.o     ${OUT}/RULESET.o  ${OUT}/SD.o       \
   ${OUT}/SIGNEF.o   ${OUT}/SIMPAN.o   ${OUT}/SFORT.o    ${OUT}/SOLVESER.o \
-  ${OUT}/SOLVETRA.o ${OUT}/SUMFS.o    ${OUT}/SUTS.o     ${OUT}/TOOLSIGN.o \
+  ${OUT}/SUMFS.o    ${OUT}/SUTS.o     ${OUT}/TOOLSIGN.o \
   ${OUT}/TRIGMNIP.o ${OUT}/TRMANIP.o  ${OUT}/UFPS.o     ${OUT}/ULSCCAT.o  \
   ${OUT}/ULSCCAT-.o ${OUT}/UPXSSING.o ${OUT}/UTSODE.o   ${OUT}/UTSODETL.o \
-  ${OUT}/UTSSOL.o   ${OUT}/UTS2.o     ${OUT}/WUTSET.o  \
-  layer17done
+  ${OUT}/UTSSOL.o   ${OUT}/UTS2.o     ${OUT}/WUTSET.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -15871,7 +15851,7 @@ Used in next layer: EXPRSOL SFRTCAT CELL
 
 LAYER18=\
   ${OUT}/CAD.o \
-  ${OUT}/DEFINTEF.o ${OUT}/DEFINTRF.o ${OUT}/DFINTTLS.o ${OUT}/EFULS.o    \
+  ${OUT}/DEFINTEF.o ${OUT}/DEFINTRF.o ${OUT}/DERHAM.o   ${OUT}/DFINTTLS.o ${OUT}/EFULS.o    \
   ${OUT}/ESCONT.o   ${OUT}/EXPR.o     ${OUT}/EXPRSOL.o  ${OUT}/EXPR2UPS.o \
   ${OUT}/FACTEXT.o  \
   ${OUT}/FDIV.o     ${OUT}/FSCINT.o   ${OUT}/FSINT.o    ${OUT}/FS2EXPXP.o \
@@ -15881,11 +15861,10 @@ LAYER18=\
   ${OUT}/NODE1.o    ${OUT}/NOTTING.o \
   ${OUT}/NTSCAT.o   ${OUT}/ODECONST.o ${OUT}/ODEEF.o    \
   ${OUT}/ODEINT.o   ${OUT}/QCMPACK.o  ${OUT}/REGSET.o   ${OUT}/REP.o      \
-  ${OUT}/RGCHAIN.o  ${OUT}/RSDCMPK.o  ${OUT}/SFRTCAT.o  ${OUT}/SOLVERAD.o \
-  ${OUT}/SULS.o     ${OUT}/SUPXS.o    ${OUT}/UFPS1.o    ${OUT}/ULS.o      \
+  ${OUT}/RGCHAIN.o  ${OUT}/RSDCMPK.o  ${OUT}/RSETGCD.o  ${OUT}/SFRTCAT.o  ${OUT}/SOLVERAD.o \
+  ${OUT}/SOLVETRA.o ${OUT}/SULS.o     ${OUT}/SUPXS.o    ${OUT}/UFPS1.o    ${OUT}/ULS.o      \
   ${OUT}/ULSCONS.o  ${OUT}/UPXS.o     ${OUT}/UPXSCONS.o ${OUT}/UTS.o      \
-  ${OUT}/UTSZ.o \
-  layer18done
+  ${OUT}/UTSZ.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -16724,8 +16703,7 @@ LAYER19=\
   ${OUT}/IRURPK.o   ${OUT}/LAZM3PK.o  ${OUT}/LEXTRIPK.o ${OUT}/NORMPK.o  \
   ${OUT}/PACEXT.o   \
   ${OUT}/RECOP.o    ${OUT}/RURPK.o    ${OUT}/SFRGCD.o   ${OUT}/SFQCMPK.o \
-  ${OUT}/SNTSCAT.o  ${OUT}/SRDCMPK.o  ${OUT}/SREGSET.o  ${OUT}/ZDSOLVE.o \
-  layer19done
+  ${OUT}/SNTSCAT.o  ${OUT}/SRDCMPK.o  ${OUT}/SREGSET.o  ${OUT}/ZDSOLVE.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -16974,9 +16952,8 @@ Next layer depends on: GUESS
 \begin{chunk}{layer20}
 
 LAYER20=\
-  ${OUT}/GUESS.o ${OUT}/INFCLSPT.o \
-  layer20done
-    
+  ${OUT}/GUESS.o ${OUT}/INFCLSPT.o
+
 \end{chunk}
 \begin{chunk}{layerpic}
 /* layer 20 */
@@ -17040,8 +17017,7 @@ Next layer depends on: GUESSF1 INFCLSPT
 
 LAYER21=\
   ${OUT}/GUESSAN.o  ${OUT}/GUESSINT.o ${OUT}/GUESSF1.o  ${OUT}/GUESSP.o \
-  ${OUT}/GUESSUP.o  ${OUT}/ICP.o      \
-  layer21done
+  ${OUT}/GUESSUP.o  ${OUT}/ICP.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -17150,8 +17126,7 @@ Depends on: GUESSF1
 \begin{chunk}{layer22}
 
 LAYER22=\
-  ${OUT}/GUESSF.o ${OUT}/INFCLSPS.o  \
-  layer22done
+  ${OUT}/GUESSF.o ${OUT}/INFCLSPS.o
 \end{chunk}
 \begin{chunk}{layerpic}
 /* layer 22 */
@@ -17201,8 +17176,7 @@ Note that PAFF and PAFFFF form clique2.spad. Each one depends on the other.
 \begin{chunk}{layer23}
 
 LAYER23=\
-  ${MID}/clique2.spad \
-  layer23done
+  ${OUT}/PAFF.o ${OUT}/PAFFFF.o
 
 \end{chunk}
 \begin{chunk}{layerpic}
@@ -17280,12 +17254,15 @@ at once.
 \begin{chunk}{newcode}
 CLIQUE1FILES = ${OUT}/MYUP.o  ${OUT}/MYEXPR.o
 
-${MID}/clique1.spad: ${CLIQUE1FILES}
-	@echo sa01 making ${OUT}/MYUP.o from ${MID}/clique1.spad
-	@echo sa02 making ${OUT}/MYEXPR.o from ${MID}/clique1.spad
+${OUT}/MYEXPR.o: ${OUT}/MYUP.o
+
+${MID}/clique1.spad: MYUP.spad MYEXPR.spad
+	@echo sa01 making $@ from $^
+	@ (cat $^ >$@ )
+
+${CLIQUE1FILES}: ${MID}/clique1.spad
+	@echo sa02 making $@ from $^
 	@ (cd ${MID} ; \
-	   cat ${IN}/MYUP.spad >clique1.spad ; \
-	   cat ${IN}/MYEXPR.spad >>clique1.spad ; \
 	   if [ -z "${NOISE}" ] ; then \
 	    echo ")co clique1.spad" | ${INTERPSYS}  ; \
            else \
@@ -17293,7 +17270,7 @@ ${MID}/clique1.spad: ${CLIQUE1FILES}
 	   fi )
 	@ cp ${MID}/MYUP.nrlib/code.o ${OUT}/MYUP.o
 	@ cp ${MID}/MYEXPR.nrlib/code.o ${OUT}/MYEXPR.o
-	
+
 \end{chunk}
 Here we have the general case where two files are co-dependent, that is,
 PAFF and PAFFFF both have to be compiled together. They also have a set
@@ -17305,12 +17282,15 @@ CLIQUE2DEPS  = BLMETCT GPAFF PFORP PACOFF PROJPLPS PLACESPS NSDPS LOCPOWC \
                DIV SETCATD PLACESC DIVCAT INFCLSPS INFCLCT DSTREE DSTRCAT \
                PRSPCAT UTSZ PACFFC PACPERC PROJPL PLACES INFCLSPT PROJPL ICP
 
-${MID}/clique2.spad: ${CLIQUE2FILES}
-	@echo sa03 making ${OUT}/PAFF.o from ${MID}/clique2.spad
-	@echo sa04 making ${OUT}/PAFFFF.o from ${MID}/clique2.spad
+${OUT}/PAFFFF.o: ${OUT}/PAFF.o
+
+$(MID)/clique2.spad: PAFF.spad PAFFFF.spad
+	@echo sa03a making $@ from $^
+	@ (cat $^ > $@ )
+
+$(CLIQUE2FILES): $(MID)/clique2.spad
+	@echo sa03 making $@ from $^
 	@ (cd ${MID} ; \
-	   cat ${IN}/PAFF.spad >clique2.spad ; \
-	   cat ${IN}/PAFFFF.spad >>clique2.spad ; \
 	   if [ -z "${NOISE}" ] ; then \
 	    echo -e ")lib ${CLIQUE2DEPS} \n )co clique2.spad" \
               | ${INTERPSYS} ; \
@@ -17321,7 +17301,7 @@ ${MID}/clique2.spad: ${CLIQUE2FILES}
 	   fi )
 	@ cp ${MID}/PAFF.nrlib/code.o ${OUT}/PAFF.o
 	@ cp ${MID}/PAFFFF.nrlib/code.o ${OUT}/PAFFFF.o
-	
+
 \end{chunk}
 \begin{chunk}{ignore}
 EXPRDEPS  = LF
@@ -17545,16 +17525,20 @@ ${OUT}/%.o: ${MID}/%.nrlib/code.o
 \end{chunk}
 \begin{chunk}{genericnrlibfiles}
 
-.PRECIOUS: ${MID}/%.nrlib/code.o
-${MID}/%.nrlib/code.o: ${MID}/%.spad
-	@ echo sa07 compiling $*.spad to $*.nrlib
+.PRECIOUS: ${MID}/%.nrlib/code.o ${MID}/%-.nrlib/code.o
+${MID}/%.nrlib/code.o: %.spad
+	@ echo sa07 compiling $^ $@
 	@ if [ -z "${NOISE}" ] ; then \
 	   (cd ${MID} ; \
-	    echo ")co $*.spad" | ${INTERPSYS} ) ; \
+	    echo ")co $<" | ${INTERPSYS} ) ; \
            else \
 	   (cd ${MID} ; \
-	     echo ")co $*.spad" | ${INTERPSYS} ) 1>/dev/null 2>/dev/null ; \
+	     echo ")co $<" | ${INTERPSYS} ) >$(TMP)/trace.$* ; \
 	   fi 
+
+${MID}/%-.nrlib/code.o: ${MID}/%.nrlib/code.o
+	@ [ -e $@ ] || exit 1
+	@ touch $@
 
 \end{chunk}
 \begin{chunk}{genericBOOTSTRAPfiles}
@@ -17673,36 +17657,40 @@ Step 2 is an awk command line.
 grep -E 'begin{chunk}{category\ .*}' ${BOOKS}/bookvol10.2.pamphlet | sort | uniq | awk -F: '{
   chunk=substr($1,15,length($1)-15);
   split(chunk,part," ");
-  spadfile="${MID}/"part[2]".spad";
+  spadfile=""part[2]".spad";
   print spadfile": ${BOOKS}/bookvol10.2.pamphlet";
-  print "	   @echo \x27(tangle \"${BOOKS}/bookvol10.2.pamphlet\" \""chunk"\" \""part[2]".spad\")\x27 | ${LISPTANGLE} ";
+  print "	   @echo sa000 extracting $@ from $^";
+  print "	   @echo \x27(tangle \"${BOOKS}/bookvol10.2.pamphlet\" \""chunk"\" \"$@\")\x27 | ${LISPTANGLE} >/dev/null 2>&1";
   print "";
 }'
 
 grep -E 'begin{chunk}{domain\ .*}' ${BOOKS}/bookvol10.3.pamphlet | sort | uniq | awk -F: '{
   chunk=substr($1,15,length($1)-15);
   split(chunk,part," ");
-  spadfile="${MID}/"part[2]".spad";
+  spadfile=""part[2]".spad";
   print spadfile": ${BOOKS}/bookvol10.3.pamphlet";
-  print "	   @echo \x27(tangle \"${BOOKS}/bookvol10.3.pamphlet\" \""chunk"\" \""part[2]".spad\")\x27 | ${LISPTANGLE} ";
+  print "	   @echo sa000 extracting $@ from $^";
+  print "	   @echo \x27(tangle \"${BOOKS}/bookvol10.3.pamphlet\" \""chunk"\" \"$@\")\x27 | ${LISPTANGLE} >/dev/null 2>&1";
   print "";
 }'
 
 grep -E 'begin{chunk}{package\ .*}' ${BOOKS}/bookvol10.4.pamphlet | sort | uniq | awk -F: '{
   chunk=substr($1,15,length($1)-15);
   split(chunk,part," ");
-  spadfile="${MID}/"part[2]".spad";
+  spadfile=""part[2]".spad";
   print spadfile": ${BOOKS}/bookvol10.4.pamphlet";
-  print "	   @echo \x27(tangle \"${BOOKS}/bookvol10.4.pamphlet\" \""chunk"\" \""part[2]".spad\")\x27 | ${LISPTANGLE} ";
+  print "	   @echo sa000 extracting $@ from $^";
+  print "	   @echo \x27(tangle \"${BOOKS}/bookvol10.4.pamphlet\" \""chunk"\" \"$@\")\x27 | ${LISPTANGLE} >/dev/null 2>&1";
   print "";
 }'
 
 grep -E 'begin{chunk}{package\ .*}' ${BOOKS}/bookvol10.5.pamphlet | sort | uniq | awk -F: '{
   chunk=substr($1,15,length($1)-15);
   split(chunk,part," ");
-  spadfile="${MID}/"part[2]".spad";
+  spadfile=""part[2]".spad";
   print spadfile": ${BOOKS}/bookvol10.5.pamphlet";
-  print "	   @echo \x27(tangle \"${BOOKS}/bookvol10.5.pamphlet\" \""chunk"\" \""part[2]".spad\")\x27 | ${LISPTANGLE} ";
+  print "	   @echo sa000 extracting $@ from $^";
+  print "	   @echo \x27(tangle \"${BOOKS}/bookvol10.5.pamphlet\" \""chunk"\" \"$@\")\x27 | ${LISPTANGLE} >/dev/null 2>&1";
   print "";
 }'
 
@@ -17809,140 +17797,211 @@ from the source file.
 We output these as each stage completes.
 \begin{chunk}{stages}
 
-layer0bootstrap:
+layer0bootstrap: $(LAYER0BOOTSTRAP)
 	@ echo ==========================================
 	@ echo === algebra bootstrap complete bookvol10
 	@ echo ==========================================
+	@ touch $@
 
-layer0copy:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER0COPY)): layer23done
+
+layer0copy: $(LAYER0COPY)
 	@ echo =======================================
 	@ echo === layer  0 copy complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer0done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER0)): layer0bootstrap
+
+layer0done: $(LAYER0)
 	@ echo =======================================
 	@ echo === layer  0 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer1done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER1)): layer0done
+
+layer1done: $(LAYER1)
 	@ echo =======================================
 	@ echo === layer  1 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer2done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER2)): layer1done
+
+layer2done: $(LAYER2)
 	@ echo =======================================
 	@ echo === layer  2 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer3done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER3)): layer2done
+
+layer3done: $(LAYER3)
 	@ echo =======================================
 	@ echo === layer  3 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer4done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER4)): layer3done
+
+layer4done: $(LAYER4)
 	@ echo =======================================
 	@ echo === layer  4 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer5done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER5)): layer4done
+
+layer5done: $(LAYER5)
 	@ echo =======================================
 	@ echo === layer  5 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer6done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER6)): layer5done
+
+layer6done: $(LAYER6)
 	@ echo =======================================
 	@ echo === layer  6 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer7done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER7)): layer6done
+
+layer7done: $(LAYER7)
 	@ echo =======================================
 	@ echo === layer  7 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer8done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER8)): layer7done
+
+layer8done: $(LAYER8)
 	@ echo =======================================
 	@ echo === layer  8 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer9done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER9)): layer8done
+
+layer9done: $(LAYER9)
 	@ echo =======================================
 	@ echo === layer 9 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer10done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER10)): layer9done
+
+layer10done: $(LAYER10)
 	@ echo =======================================
 	@ echo === layer 10 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer11done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER11)): layer10done
+
+layer11done: $(LAYER11)
 	@ echo =======================================
 	@ echo === layer 11 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer12done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER12)): layer11done
+
+layer12done: $(LAYER12)
 	@ echo =======================================
 	@ echo === layer 12 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer13done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER13)): layer12done
+
+layer13done: $(LAYER13)
 	@ echo =======================================
 	@ echo === layer 13 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer14done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER14)): layer13done
+
+layer14done: $(LAYER14)
 	@ echo =======================================
 	@ echo === layer 14 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer15done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER15)): layer14done
+
+layer15done: $(LAYER15)
 	@ echo =======================================
 	@ echo === layer 15 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer16done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER16)): layer15done
+
+layer16done: $(LAYER16)
 	@ echo =======================================
 	@ echo === layer 16 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer17done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER17)): layer16done
+
+layer17done: $(LAYER17)
 	@ echo =======================================
 	@ echo === layer 17 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer18done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER18)): layer17done
+
+layer18done: $(LAYER18)
 	@ echo =======================================
 	@ echo === layer 18 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer19done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER19)): layer18done
+
+layer19done: $(LAYER19)
 	@ echo =======================================
 	@ echo === layer 19 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer20done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER20)): layer19done
+
+layer20done: $(LAYER20)
 	@ echo =======================================
 	@ echo === layer 20 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer21done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER21)): layer20done
+
+layer21done: $(LAYER21)
 	@ echo =======================================
 	@ echo === layer 21 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer22done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER22)): layer21done
+
+layer22done: $(LAYER22)
 	@ echo =======================================
 	@ echo === layer 22 of 24 complete bookvol10
 	@ echo =======================================
+	@ touch $@
 
-layer23done:
+$(patsubst $(OUT)/%.o,%.spad,$(LAYER23)): layer22done
+
+layer23done: $(LAYER23)
 	@ echo =======================================
 	@ echo === layer 23 of 24 complete bookvol10
 	@ echo =======================================
-
-layer24done:
-	@ echo =======================================
-	@ echo === layer 24 of 24 complete bookvol10
-	@ echo =======================================
+	@ touch $@
 
 \end{chunk}
 \subsection{Regression testing}
@@ -19229,6 +19288,7 @@ fasthelp:
 	@ echo =========================================
 	@echo sa17 making .help files with lisp
 	@ echo "(makeHelpFiles)" | ${LISP}
+	@ touch $@
 
 fastinput:
 	@ echo ==========================================
@@ -19236,6 +19296,7 @@ fastinput:
 	@ echo ==========================================
 	@echo sa18 making .input files with lisp
 	@ echo "(makeInputFiles)" | ${LISP}
+	@ touch $@
 
 fastxhtml:
 	@ echo ==========================================
@@ -19244,8 +19305,9 @@ fastxhtml:
 	@echo sa19 making .xhtml files with lisp
 	@ mkdir -p ${MNT}/doc
 	@ echo "(makeXHTMLFiles)" | ${LISP}
+	@ touch $@
 
-copyspad:
+copyspad: src
 	@ echo ==========================================
 	@ echo src/algebra COPYING SPAD FILES TO ${OUTSPAD}
 	@ echo ==========================================
@@ -19275,7 +19337,7 @@ everything: lib db cmd gloss
 	@ echo SPAD= ${SPAD} SRC= ${SRC} INT= ${INT}
 	@ echo OBJ= ${OBJ} MNT= ${MNT} O=${O} LISP=${LISP} BYE=${BYE}
 
-src:	announce ${ORDER}
+src:	announce layer0copy
 	@ echo sa23 Finished uilding nrlibS from spad sources
 
 announce:
@@ -19289,6 +19351,8 @@ announce:
 \getchunk{stages}
 
 clean:
+	@rm -f fasthelp fastinput fasthtml layer*done layer0bootstrap layer0copy
+	@rm -rf $(MID)/*.nrlib $(MID)/*.o $(OUT)/*.o *.spad
 	@echo sa24 src/algebra cleaned
 
 \end{chunk}

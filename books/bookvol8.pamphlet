@@ -30129,28 +30129,28 @@ finish:
 	@ echo Finish Graphics tools bookvol8
 	@ echo ================================
 
-${OUTLIB}/viewman: ${BOOK}
+${OUTLIB}/viewman: ${BOOK} ${LIB}/libspad.a
 	@ echo 2 making ${OUTLIB}/viewman from ${BOOK}
 	@( cd ${WORK} ; \
 	   ${BOOKS}/tanglec ${BOOK} viewman >viewman.c ; \
 	   ${CC} ${CFLAGS} -c viewman.c ; \
 	   ${CC} ${VLIBS} viewman.o -o ${OUTLIB}/viewman ${LDFLAGS} )
 
-${OUTLIB}/view2d: ${BOOK}
+${OUTLIB}/view2d: ${BOOK} ${LIB}/libspad.a
 	@ echo 3 making ${OUTLIB}/view2d from ${BOOK}
 	@( cd ${WORK} ; \
 	   ${BOOKS}/tanglec ${BOOK} view2d >view2d.c ; \
 	   ${CC} ${CFLAGS} -c view2d.c ; \
 	   ${CC} ${LIBS} view2d.o -o ${OUTLIB}/view2d ${LDFLAGS} )
 
-${OUTLIB}/view3d: ${BOOK}
+${OUTLIB}/view3d: ${BOOK} ${LIB}/libspad.a
 	@ echo 4 making ${OUTLIB}/view3d from ${BOOK}
 	@( cd ${WORK} ; \
 	   ${BOOKS}/tanglec ${BOOK} view3d >view3d.c ; \
 	   ${CC} ${CFLAGS} -c view3d.c ; \
 	   ${CC} ${LIBS} view3d.o -o ${OUTLIB}/view3d ${LDFLAGS} )
 
-${OUTBIN}/viewalone: ${BOOK}
+${OUTBIN}/viewalone: ${BOOK} ${LIB}/libspad.a
 	@ echo 5 making ${OUTBIN}/viewalone from ${BOOK}
 	@( cd ${WORK} ; \
 	   ${BOOKS}/tanglec ${BOOK} viewalone >viewalone.c ; \
@@ -30167,11 +30167,11 @@ ${PS}/%.ps: ${BOOK}
 	@ echo 7 ${PS}/$*.ps from ${BOOK} 
 	@ ${BOOKS}/tanglec ${BOOK} "psfiles/$*" >"${PS}/$*.ps"
 
-${OUTBIN}/clef: ${BOOK}
+${OUTBIN}/clef: ${BOOK} ${LIB}/libspad.a
 	@ echo 8 making ${OUTBIN}/clef from ${BOOK}
 	@( cd ${LIB} ; ${CC} ${CLEFOBJS} -o ${OUTBIN}/clef )
 
-libspad.a: ${BOOK}
+libspad.a ${LIB}/libspad.a ${LIB}/edible.o: ${BOOK}
 	@ echo ======================================
 	@ echo BUILDING LIB FILES
 	@ echo ======================================

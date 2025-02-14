@@ -17,7 +17,9 @@ all of the algreba/*.nrlib/code.o files are required in order to build
 the databases. If any if any of these are changed, the databases must
 be re-built.
 \begin{chunk}{dbcomplete}
-${MNT}/${SYS}/algebra/*.daase: ${INT}/algebra/*.nrlib/code.o
+${MNT}/${SYS}/algebra/*.daase: rebuild
+
+rebuild: ${INT}/algebra/*.nrlib/code.o
 	@ echo se01 rebuilding databases...
 	@ cp ${SRC}/doc/gloss.text ${INT}/algebra
 	@ cp ${SRC}/doc/gloss.text ${INT}/algebra

@@ -90,8 +90,8 @@ PROVE=${PROOFS}/acl2.lisp ${PROOFS}/coq.lisp
 OTHER=  ${PDF}/refcard.pdf     ${PDF}/endpaper.pdf    ${PDF}/rosetta.pdf
 
 all: announce tanglecopy ${PDF}/axiom.bib ${PDF}/master ${PROVE} ${OTHER} \
-     ${COOKPAGES} ${BOOKPDF} ${PDF}/toc.pdf spadedit axbook news design
-	@(cd ${PDF} ; ${RM} *.out *.toc *.sty *.def *.png *.bbl *.blg)
+     ${COOKPAGES} ${BOOKPDF} ${PDF}/toc.pdf ${OUT1}/SPADEDIT axbook news design
+	@(cd ${PDF} ; ${RM} *.out *.sty *.def *.png *.bbl *.blg bookheader.tex)
 
 ${PDF}/master: 
 	@ echo ==================================
@@ -99,12 +99,14 @@ ${PDF}/master:
 	@ echo ==================================
 	@ cp ${SPD}/.git/refs/heads/master ${PDF}/master
 
-tanglecopy:
+${BOOKS}/tanglec: ${BOOKS}/tanglec.c
+	@ gcc -o $@ $<
+
+tanglecopy: ${BOOKS}/tanglec
 	@ echo ==================================
 	@ echo COPY TANGLEC TO BIN
 	@ echo ==================================
-	@ gcc -o tanglec tanglec.c
-	@ cp tanglec ${OUTBIN}
+	@ cp $< ${OUTBIN}
 
 news:
 	@ echo ==================================
@@ -134,7 +136,7 @@ finish:
 	@ echo FINISHED BUILDING PDF FILES books/Makefile
 	@ echo ==========================================
 
-${PROOFS}/acl2.lisp:
+${PROOFS}/acl2.lisp: ${BOOKS}/tanglec
 	@ echo ===========================================
 	@ echo making ${PROOFS}/acl2.lisp
 	@ echo ===========================================
@@ -144,9 +146,9 @@ ${PROOFS}/acl2.lisp:
 	    ( cd ${PROOFS} ; echo '(ld "acl2.lisp")' | acl2 >acl2.output ) ; \
 	   fi ; 
 
-${PROOFS}/coq.lisp:
+${PROOFS}/coq.v: ${BOOKS}/tanglec
 	@ echo ===========================================
-	@ echo making ${PROOFS}/coq.lisp
+	@ echo making ${PROOFS}/coq.v
 	@ echo ===========================================
 	@ ${BOOKS}/tanglec ${BOOKS}/bookvol10.2.pamphlet coq >${PROOFS}/coq.v
 	@ ${BOOKS}/tanglec ${BOOKS}/bookvol10.3.pamphlet coq >>${PROOFS}/coq.v
@@ -156,7 +158,7 @@ ${PROOFS}/coq.lisp:
 	    ( cd ${PROOFS} ; cat coq.v | coqtop >coq.console 2>&1 ) ; \
 	   fi ; 
 
-${PDF}/axiom.bib:
+${PDF}/axiom.bib: ${BOOKS}/tanglec
 	@ echo ===========================================
 	@ echo making ${PDF}/axiom.bib from ${IN}/bookvolbib.pamphlet
 	@ echo ===========================================
@@ -371,7 +373,7 @@ ${PDF}/bookvol15.pdf: ${IN}/bookvol15.pamphlet \
 	  ${RM} err.idx err.ilg err.ind ; \
 	  ${RM} bookheader.tex )
 
-${PDF}/%.pdf: ${IN}/%.pamphlet ${PDF}/axiom.bib ${PDF}/axiom.bst 
+${PDF}/%.pdf ${PDF}/%.toc: ${IN}/%.pamphlet ${PDF}/axiom.bib ${PDF}/axiom.bst
 	@ echo ===========================================
 	@ echo making ${PDF}/$*.pdf from ${IN}/$*.pamphlet
 	@ echo ===========================================
@@ -380,25 +382,24 @@ ${PDF}/%.pdf: ${IN}/%.pamphlet ${PDF}/axiom.bib ${PDF}/axiom.bst
 	  cp ${IN}/$*.pamphlet ${PDF} ; \
 	  cp ${IN}/bookheader.tex ${PDF} ; \
 	  cp -pr ${IN}/ps ${PDF} ; \
-	  ${RM} $*.toc ; \
-	  touch signatures.tex ; \
+	  ${RM} $*.toc $*.aux $*.out ; \
+	  touch signatures.$*.tex ; \
 	  touch $*.sigs ; \
 	  if [ -z "${NOISE}" ] ; then \
 	    ${LATEX} $*.pamphlet ; \
-	    cp signatures.tex $*.sigs ; \
-	    cp signatures.tex signatures.sort ; \
+	    cp signatures.$*.tex $*.sigs ; \
+	    cp signatures.$*.tex signatures.sort ; \
 	    ${MAKEINDEX} $*.idx  1>/dev/null 2>/dev/null ; \
 	    ${BIBTEX} $*.aux ; \
 	    ${LATEX} $*.pamphlet >/dev/null ; \
 	    ${LATEX} $*.pamphlet >/dev/null ; \
 	    ${DVIPDFM} $*.dvi 2>/dev/null ; \
 	    ${RM} $*.aux $*.dvi $*.log $*.ps $*.idx $*.tex $*.pamphlet ; \
-	    ${RM} $*.ilg $*.ind *.sigs signatures.tex ; \
-	    ${RM} bookheader.tex ; \
+	    ${RM} $*.ilg $*.ind *.sigs signatures.$*.tex ; \
 	  else \
 	    ${LATEX} $*.pamphlet >${TMP}/trace ; \
-	    cp signatures.tex $*.sigs ; \
-	    cp signatures.tex signatures.sort ; \
+	    cp signatures.$*.tex $*.sigs ; \
+	    cp signatures.$*.tex signatures.sort ; \
 	    ${MAKEINDEX} $*.idx  1>/dev/null 2>/dev/null ; \
 	    ${BIBTEX} $*.aux  1>/dev/null 2>/dev/null ; \
 	    ${LATEX} $*.pamphlet >${TMP}/trace ; \
@@ -406,12 +407,10 @@ ${PDF}/%.pdf: ${IN}/%.pamphlet ${PDF}/axiom.bib ${PDF}/axiom.bst
 	    ${DVIPDFM} $*.dvi 2>${TMP}/trace ; \
 	    ${RM} $*.aux $*.dvi $*.log $*.ps $*.idx $*.tex $*.pamphlet ; \
 	    ${RM} $*.ilg $*.ind ; \
-	    ${RM} $*.ilg $*.ind *.sigs signatures.tex ; \
-	    ${RM} bookheader.tex ; \
+	    ${RM} $*.ilg $*.ind *.sigs signatures.$*.tex ; \
 	  fi ; \
 	  ${RM} $*.aux $*.dvi $*.log $*.ps $*.idx $*.tex $*.pamphlet ; \
-	  ${RM} $*.ilg $*.ind ; \
-	  ${RM} bookheader.tex )
+	  ${RM} $*.ilg $*.ind )
 
 
 \end{chunk}
@@ -446,7 +445,7 @@ The sed patterns to match and remove them (in order) are:
             -e 's/{subsection.[A-Z]*.[0-9]*.[0-9]*}//' \
 \end{chunk}
 \begin{chunk}{*}
-${PDF}/toc.pdf: ${BOOKPDF}
+${PDF}/toc.pdf: ${BOOKPDF} $(patsubst %.pdf,%.toc,$(BOOKPDF))
 	@echo b3 making ${PDF}/toc.pdf
 	@ cp ${BOOKS}/ps/axiomfront.ps ${PDF}
 	@ cp ${BOOKS}/ps/bluebayou.ps ${PDF}
@@ -602,13 +601,13 @@ ${PDF}/toc.pdf: ${BOOKPDF}
 \getchunk{sed pattern}
             <bookvolbib.toc >>toc.toc ; \
 	if [ -z "${NOISE}" ] ; then \
-	  ${LATEX} toc.tex ; \
+	  ${LATEX} -interaction=nonstopmode toc.tex ; \
 	  ${DVIPS} toc.dvi 2>/dev/null ; \
 	  ${PS2PDF} toc.ps 2>/dev/null ; \
 	  ${RM} -f toc.aux toc.dvi toc.log toc.ps toc.tex toc.toc ; \
 	  ${RM} -f bluebayou.ps axiomfront.ps ; \
 	else \
-	  ${LATEX} toc.tex >${TMP}/trace ; \
+	  ${LATEX} -interaction=nonstopmode toc.tex >${TMP}/trace ; \
 	  ${DVIPS} toc.dvi 2>${TMP}/trace ; \
 	  ${PS2PDF} toc.ps 2>${TMP}/trace ; \
 	  ${RM} -f toc.aux toc.dvi toc.log toc.ps toc.tex toc.toc ; \
@@ -617,11 +616,10 @@ ${PDF}/toc.pdf: ${BOOKPDF}
 
 \end{chunk}
 \begin{chunk}{*}
-spadedit:
-	@echo b4 making spadedit from ${BOOKS}/bookvol5 to ${OUT1}
-	@${BOOKS}/tanglec ${BOOKS}/bookvol5.pamphlet spadedit \
-            >${OUT1}/SPADEDIT
-	@chmod +x ${OUT1}/SPADEDIT
+${OUT1}/SPADEDIT: ${BOOKS}/bookvol5.pamphlet ${BOOKS}/tanglec
+	@echo b4 making $@ from $^
+	@${BOOKS}/tanglec $< spadedit >$@
+	@chmod +x $@
 
 \end{chunk}
 \section{Combined Bibliography}

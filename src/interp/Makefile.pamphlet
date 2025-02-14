@@ -830,7 +830,7 @@ ${OUT}/%.lisp: ${IN}/%.lisp.pamphlet
           echo '(tangle "${IN}/$*.lisp.pamphlet" "*" "$*.lisp")' \
         | ${OBJ}/${SYS}/bin/lisp ) 1>/dev/null 
 
-${OUT}/%.o: ${MID}/%.lisp
+${OUT}/%.o: ${MID}/%.lisp ${DEPSYS}
 	@ echo siOUTfromMID making ${OUT}/$*.o from ${MID}/$*.lisp
 	@ if [ -z "${NOISE}" ] ; then \
 	   (cd ${MID} ; \
@@ -851,7 +851,7 @@ ${AUTO}/%.${O}: ${OUT}/%.${O}
 	@ echo siAUTOfromOUT making ${AUTO}/$*.${O} from ${OUT}/$*.${O}
 	@ cp ${OUT}/$*.${O} ${AUTO}
 
-${OUT}/%.${O}: ${MID}/%.${LISP}
+${OUT}/%.${O}: ${MID}/%.${LISP} ${DEPSYS}
 	@ echo si123 making ${OUT}/$*.${O} from ${MID}/$*.${LISP}
 	@  if [ -z "${NOISE}" ] ; then \
 	 (cd ${MID} ; \

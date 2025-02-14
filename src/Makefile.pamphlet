@@ -47,9 +47,9 @@ VOL11=${BOOKS}/bookvol11.pamphlet
 Superman (sman) is the master process that runs all of the other
 processes including axiom, clef, nagman, graphics, and hyperdoc
 \begin{chunk}{smandir}
-smandir: ${SPD}/books/bookvol6.pamphlet
+smandir: graphdir ${SPD}/books/bookvol6.pamphlet
 	@echo 5 making ${SRC}/sman
-	@( cd sman ; \
+	@( mkdir sman; cd sman ; \
 	   ${BOOKS}/tanglec ${BOOKS}/bookvol6.pamphlet >Makefile ; \
            ${ENV} ${MAKE} )
 
@@ -129,13 +129,16 @@ against the macros that exist in that file. This is done in the
 function buildHtMacroTable (htcheck.boot)
 
 \begin{chunk}{interpdir}
-interpdir: ${SRC}/interp/Makefile
+interp/bookvol%.pamphlet: ${SPD}/books/bookvol%.pamphlet
+	@cp $< $@
+
+${MNT}/${SYS}/doc/util.ht: ${BOOKS}/bookvol7.1.pamphlet
+	@(cd $(@D); ${BOOKS}/tanglec $< util.ht >$@)
+
+interpdir: ${SRC}/interp/Makefile \
+	   interp/bookvol5.pamphlet interp/bookvol9.pamphlet interp/bookvol10.5.pamphlet \
+	   ${MNT}/${SYS}/doc/util.ht
 	@echo 25 making ${SRC}/interp
-	@cp ${SPD}/books/bookvol5.pamphlet interp
-	@cp ${SPD}/books/bookvol9.pamphlet interp
-	@cp ${SPD}/books/bookvol10.5.pamphlet interp
-	@(cd ${MNT}/${SYS}/doc ; \
-          ${BOOKS}/tanglec ${BOOKS}/bookvol7.1.pamphlet util.ht >util.ht )
 	@(cd interp ; ${ENV} ${MAKE} )
 
 ${SRC}/interp/Makefile: ${SRC}/interp/Makefile.pamphlet
@@ -173,7 +176,7 @@ test input files are compared against known good results to ensure
 that nothing has been broken in the process of fixing bugs.
 
 \begin{chunk}{inputdir}
-inputdir: ${SRC}/input/Makefile
+inputdir: etcdir ${SRC}/input/Makefile
 	@echo 33 making ${SRC}/input
 	@(cd input ; ${ENV} ${MAKE} )
 #	@(cd input ; ${ENV} ${MAKE} -j 10)
@@ -204,7 +207,7 @@ The asq \cite{2} command, contained in this directory, is useful
 for finding detailed information about domains, packages, and
 categories from the shell without running Axiom.
 \begin{chunk}{etcdir}
-etcdir: ${SRC}/etc/Makefile
+etcdir: algebradir ${SRC}/etc/Makefile
 	@echo 37 making ${SRC}/etc
 	@(cd etc ; ${ENV} ${MAKE} )
 
@@ -234,7 +237,7 @@ This takes all of the Axiom volumes and creates .pdf copies in the
 final doc directory.
 
 \begin{chunk}{docdir}
-docdir: 
+docdir: algebradir
 	@echo 41 making ${SRC}/doc
 	@(cd ${MNT}/${SYS}/doc/hypertex ; \
 	 ${BOOKS}/tanglec axiom1.bitmap >bitmaps/axiom1.bitmap ; \
@@ -253,7 +256,7 @@ docdir:
 \subsection{Volume 7:Axiom Hyperdoc book}
 Hyperdoc is the Axiom document browser.
 \begin{chunk}{hyperdir}
-hyperdir: ${SPD}/books/bookvol7.pamphlet ${SPD}/books/bookvol7.1.pamphlet
+hyperdir: smandir ${SPD}/books/bookvol7.pamphlet ${SPD}/books/bookvol7.1.pamphlet
 	@echo 7 making hyperdoc from bookvol7
 	@(cd ${INT}/hyper ; \
           ${BOOKS}/tanglec ${BOOKS}/bookvol7.pamphlet >Makefile ; \
@@ -266,7 +269,7 @@ hyperdir: ${SPD}/books/bookvol7.pamphlet ${SPD}/books/bookvol7.1.pamphlet
 \end{chunk}
 \subsection{Volume 8: Axiom Graphics book}
 \begin{chunk}{graphdir}
-graphdir: ${SPD}/books/bookvol8.pamphlet
+graphdir: docdir ${SPD}/books/bookvol8.pamphlet
 	@echo 8 making graph from bookvol8
 	@(cd ${OBJ}/${SYS}/graph ; \
           ${BOOKS}/tanglec ${BOOKS}/bookvol8.pamphlet Makefile >Makefile ; \
@@ -317,7 +320,7 @@ and bookvol10.3 (Packages) to the src/algebra subdirectory.
 
 \subsection{Volume 10: Axiom Algebra book}
 \begin{chunk}{algebradir}
-algebradir: ${SRC}/algebra/Makefile ${SPD}/books/bookvol10.pamphlet \
+algebradir: interpdir ${SRC}/algebra/Makefile ${SPD}/books/bookvol10.pamphlet \
             ${SPD}/books/bookvol7.1.pamphlet
 	@echo 29 making ${SRC}/algebra
 	@(cd algebra ; ${ENV} ${MAKE} )
@@ -355,7 +358,7 @@ They can be expanded in parallel since they (currently) need no
 post processing. Thus the "-j 10" argument to make. We use 
 ``Makefile11'' so that future parallel builds don't step on each other.
 \begin{chunk}{browserdir}
-browserdir: ${SPD}/books/bookvol11.pamphlet
+browserdir: hyperdir ${SPD}/books/bookvol11.pamphlet
 	@echo 11 making browser from bookvol11
 #	@(cd ${MNT}/${SYS}/doc/hypertex ; \
 #	  ${BOOKS}/tanglec ${SPD}/books/bookvol11.pamphlet >Makefile11 ; \

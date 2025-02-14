@@ -35,8 +35,8 @@ TOUCH:=touch
 UNCOMPRESS:=gunzip
 
 ####K C Related variables
-PLF=${SYS}platform
-CCF="-O2 -fno-strength-reduce -D_GNU_SOURCE -D${PLF} \
+PLF=$(shell echo $(SYS) |tr /a-z/ /A-Z/)platform
+CCF="${CFLAGS} -O2 -fno-strength-reduce -D_GNU_SOURCE -D${PLF} \
      -I/usr/X11/include \
      -Wno-absolute-value -std=gnu89 -w" 
 INC:=${SPD}/src/include
@@ -136,60 +136,32 @@ WEAVE=${WEAVE} \
 XLIB=${XLIB} \
 ZIPS=${ZIPS} 
 
-all: rootdirs axiom.sty tanglec libspad lspdir
+all: rootdirs axiom.sty $(BOOKS)/tanglec libspad lspdir input_files book_files src_files
 	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
-	@ echo 2 Environment ${ENV}
-	@ ${BOOKS}/tanglec Makefile.pamphlet "Makefile.${SYS}" >Makefile.${SYS}
-	@ cp ${BOOKS}/dvipdfm.def ${MNT}/${SYS}/doc
-	@ cp ${BOOKS}/changepage.sty ${MNT}/${SYS}/doc
-	@ ${EXTRACT} Makefile.pamphlet
-	@ cp Makefile.pdf ${MNT}/${SYS}/doc/src/root.Makefile.pdf
-	@ if [ "${RUNTYPE}" = "parallel" ] ; then \
-	   ( echo p4 starting parallel make of input files ; \
-	     ${ENV} ${MAKE} input ${NOISE} & ) ; \
-	  else \
-           if [ "${BUILD}" = "full" ] ; then \
-	   ( echo s4 starting serial make of input files ; \
-             cd ${MNT}/${SYS}/doc/src/input ; \
-	     cp ${BOOKS}/axiom.sty . ; \
-             cp ${SRC}/input/*.eps . ; \
-	     for i in `ls ${SRC}/input/*.input.pamphlet` ; do \
-	      if [ .${NOISE} = . ] ; \
-	      then \
-               latex $$i ; \
-	      else \
-	       ( echo p4a making $$i ; \
-	         latex $$i >${TMP}/trace ) ; \
-	      fi ; \
-             done ; \
-	     rm -f *~ ; \
-	     rm -f *.pamphlet~ ; \
-	     rm -f *.log ; \
-	     rm -f *.tex ; \
-	     rm -f *.toc ; \
-	     rm -f *.aux ) ; fi ; \
-	  fi
-	@ if [ "${RUNTYPE}" = "parallel" ] ; then \
-	    ( echo s2 starting parallel make of books ; \
-	      echo s3 ${SPD}/books/Makefile from \
-                   ${SPD}/books/Makefile.pamphlet ; \
-	      cd ${SPD}/books ; \
-              ${EXTRACT} Makefile ; \
-              cp Makefile.pdf ${MNT}/${SYS}/doc/src/books.Makefile.pdf ; \
-	      ${ENV} ${MAKE} & ) ; \
-	  else \
-	    ( echo s2 starting serial make of books ; \
-	      echo s3 ${SPD}/books/Makefile from \
-                   ${SPD}/books/Makefile.pamphlet ; \
-	      cd ${SPD}/books ; \
-              ${EXTRACT} Makefile ; \
-              cp Makefile.pdf ${MNT}/${SYS}/doc/src/books.Makefile.pdf ; \
-              if [ "${BUILD}" = "full" ] ; then \
-	      ${ENV} ${MAKE} ; fi ) ; \
-	  fi
-	@ echo p7 starting make of src
-	@ ${ENV} $(MAKE) -f Makefile.${SYS} 
+	@ echo 2 Environment '${ENV}'
+	@ ${ENV} $(MAKE) -f $<
 	@ echo 3 finished system build on `date` | tee >lastBuildDate
+
+Makefile.${SYS}: Makefile.pamphlet ${BOOKS}/tanglec
+	${BOOKS}/tanglec $< "Makefile.${SYS}" >$@
+
+${MNT}/${SYS}/doc/src/root.Makefile.pdf: Makefile.pdf rootdirs
+	@cp $< $@
+
+${MNT}/${SYS}/doc/dvipdfm.def: ${BOOKS}/dvipdfm.def rootdirs
+	@cp $< $@
+
+${MNT}/${SYS}/doc/changepage.sty: ${BOOKS}/changepage.sty rootdirs
+	@cp $< $@
+
+Makefile.pdf: Makefile.pamphlet $(BOOKS)/tanglec
+	@ ${EXTRACT} $<
+
+src_files: Makefile.${SYS} ${MNT}/${SYS}/doc/src/root.Makefile.pdf \
+	   ${MNT}/${SYS}/doc/dvipdfm.def ${MNT}/${SYS}/doc/changepage.sty $(BOOKS)/tanglec
+ 	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
+ 	@ echo 2 Environment '${ENV}'
+	@ ${ENV} $(MAKE) -f $<
 
 lspdir: ${LSP}/Makefile
 	@echo 19 making ${LSP}
@@ -199,9 +171,9 @@ lspdir: ${LSP}/Makefile
 	@echo lsp BUILDING GCL COMMON LISP
 	@echo =====================================
 	(cd lsp ; ${ENV} DESTDIR= ${MAKE} gcldir ) 
-	@(cp ${GCLDIR}/unixport/saved_gcl ${SPADBIN}/${GCLVERSION})
+	@(cp ${OBJ}/${SYS}/bin/lisp ${SPADBIN}/${GCLVERSION})
 
-${LSP}/Makefile: ${LSP}/Makefile.pamphlet
+${LSP}/Makefile: ${BOOKS}/tanglec ${LSP}/Makefile.pamphlet
 	@echo 20 making ${LSP}/Makefile from ${LSP}/Makefile.pamphlet
 	@( cd lsp ; \
 	 ${EXTRACT} Makefile.pamphlet ; \
@@ -219,7 +191,7 @@ lspclean:
 	@rm -f ${LSP}/Makefile ${LSP}/Makefile.dvi
 
 
-libspad: 
+libspad: rootdirs $(BOOKS)/tanglec
 	@ echo 11a making libspad
 	@ ( cd ${OBJ}/${SYS}/lib ; \
 	    ${BOOKS}/tanglec ${BOOKS}/bookvol8.pamphlet Makefile >Makefile ; \
@@ -262,6 +234,7 @@ rootdirs:
 	 mkdir -p ${MNT}/${SYS}/input
 	 mkdir -p ${MNT}/${SYS}/lib/graph
 	 mkdir -p ${MNT}/${SYS}/lib/scripts
+	 touch $@
 
 input:
 	@ echo p9 making input documents
@@ -277,6 +250,29 @@ input:
 	     rm -f *.tex ; \
 	     rm -f *.toc ; \
 	     rm -f *.aux ) ; fi
+
+input_files: $(BOOKS)/tanglec $(patsubst ${SRC}/input/%.input.pamphlet, \
+	       ${MNT}/${SYS}/doc/src/input/%.input.dvi, \
+	       $(shell ls -1 ${SRC}/input/*.input.pamphlet))
+
+${MNT}/${SYS}/doc/src/input/axiom.sty: rootdirs ${BOOKS}/axiom.sty ${SRC}/input/*.eps
+	@echo copying axiom.sty
+	cp $(filter-out rootdirs,$^) $(@D)
+
+${MNT}/${SYS}/doc/src/input/%.input.dvi: ${SRC}/input/%.input.pamphlet ${MNT}/${SYS}/doc/src/input/axiom.sty
+	@echo making $@ from $<
+	@(cd $(@D); \
+	if [ $(NOISE). = . ] ; then latex $<; else latex $< >$(TMP)/trace; fi ; \
+	rm -f *~ $*.log $*.tex $*.toc $*.aux )
+
+$(SPD)/books/Makefile.pdf: $(SPD)/books/Makefile.pamphlet $(BOOKS)/tanglec
+	@(cd $(@D); $(EXTRACT) Makefile)
+
+${MNT}/${SYS}/doc/src/books.Makefile.pdf: $(SPD)/books/Makefile.pdf
+	@cp $< $@
+
+book_files: $(BOOKS)/tanglec ${MNT}/${SYS}/doc/src/books.Makefile.pdf
+	@(cd books;$(ENV) $(MAKE))
 
 book:
 	@ echo 79 building the book as ${MNT}/${SYS}/doc/book.dvi 
@@ -297,9 +293,9 @@ book:
 	@ echo 80 The book is at ${MNT}/${SYS}/doc/book.dvi 
 
 
-tanglec: books/tanglec.c
+$(BOOKS)/tanglec: books/tanglec.c
 	@echo t01 making tanglec from books/tanglec.c
-	@( cd books ; gcc -o tanglec tanglec.c )
+	gcc -o $@ $<
 
 install:
 	@echo 78 installing Axiom in ${DESTDIR}
@@ -319,7 +315,7 @@ install:
 	@echo 
 
 
-document: 
+document: ${BOOKS}/tanglec
 	@ echo 4 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
 	@ echo 5 Environment ${ENV}
 	@ ${BOOKS}/tanglec Makefile.pamphlet "Makefile.${SYS}" >Makefile.${SYS}
@@ -369,5 +365,5 @@ clean:
 	@ rm -f src/share/Makefile src/share/Makefile.dvi
 	@ rm -f src/share/Makefile.pdf 
 	@ rm -f Makefile.aux
-	@ rm -f Makefile.log
+	@ rm -f Makefile.log rootdirs
 
