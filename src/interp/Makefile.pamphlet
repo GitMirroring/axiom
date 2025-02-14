@@ -834,13 +834,11 @@ ${OUT}/%.o: ${MID}/%.lisp
 	@ echo siOUTfromMID making ${OUT}/$*.o from ${MID}/$*.lisp
 	@ if [ -z "${NOISE}" ] ; then \
 	   (cd ${MID} ; \
-	    echo '(progn  (compile-file "$*.lisp"' \
-             ':output-file "${OUT}/$*.o") (${BYE}))' | ${DEPSYS} ) ; \
+	    echo "(let ((compiler::*cc* (concatenate 'string compiler::*cc* \" -I ${INC} -I ../lib\")))  (compile-file \"$*.lisp\" :output-file \"${OUT}/$*.o\") (${BYE}))" | ${DEPSYS} ) ; \
 	   else \
 	    (cd ${MID} ; \
-	     echo '(progn  (compile-file "$*.lisp"' \
-             ':output-file "${OUT}/$I.o") (${BYE}))' | ${DEPSYS} ) \
-              1>/dev/null 2>/dev/null ; \
+	     echo "(let ((compiler::*cc* (concatenate 'string compiler::*cc* \" -I ${INC} -I ../lib\")))  (compile-file \"$*.lisp\" :output-file \"${OUT}/$*.o\") (${BYE}))" | ${DEPSYS} ) \
+              1>$$(echo "$(NOISE)" | $(AWK) '{print $$2}') 2>&1 ; \
 	   fi 
 
 ${MID}/%.lisp: ${IN}/%.lisp.pamphlet
@@ -857,13 +855,11 @@ ${OUT}/%.${O}: ${MID}/%.${LISP}
 	@ echo si123 making ${OUT}/$*.${O} from ${MID}/$*.${LISP}
 	@  if [ -z "${NOISE}" ] ; then \
 	 (cd ${MID} ; \
-	   echo '(progn  (compile-file "${MID}/$*.${LISP}"' \
-             ':output-file "${OUT}/$*.${O}") (${BYE}))' | ${DEPSYS} ) ; \
+	    echo "(let ((compiler::*cc* (concatenate 'string compiler::*cc* \" -I ${INC} -I ../lib\")))  (compile-file \"$*.${LISP}\" :output-file \"${OUT}/$*.${O}\") (${BYE}))" | ${DEPSYS} ) ; \
 	  else \
 	  (cd ${MID} ; \
-	   echo '(progn  (compile-file "${MID}/$*.${LISP}"' \
-             ':output-file "${OUT}/$*.${O}") (${BYE}))' | ${DEPSYS} ) \
-              1>/dev/null 2>/dev/null ; \
+	    echo "(let ((compiler::*cc* (concatenate 'string compiler::*cc* \" -I ${INC} -I ../lib\")))  (compile-file \"$*.${LISP}\" :output-file \"${OUT}/$*.${O}\") (${BYE}))" | ${DEPSYS} ) ; \
+              1>$$(echo "$(NOISE)" | $(AWK) '{print $$2}') 2>&1 ; \
 	  fi 
 
 \end{chunk}

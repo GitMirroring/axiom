@@ -45,6 +45,10 @@
 \end{verbatim}
 \begin{chunk}{*}
 
+(clines "
+#define GCL_SOURCE
+#include \"../lib/cfuns-c.c\"
+")
 
 (in-package "BOOT")
 
@@ -81,7 +85,7 @@
 ;;stolen from AXIOM-XL src/strops.c
 #+(AND KCL (NOT ELF))
 (Clines 
-"MYHASH(s)"
+"int MYHASH(s)"
 "char *s;"
 "{"
 " register unsigned int   h = 0;"
