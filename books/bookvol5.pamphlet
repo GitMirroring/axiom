@@ -49050,7 +49050,7 @@ filetype and filemode. We also UPCASE everything.
 \begin{chunk}{defun pathname}
 (defun |pathname| (p)
  (cond
-  ((null p) p)
+  ((symbolp p) (pathname (string p)))
   ((pathnamep p) p)
   ((symbolp p) (pathname (string p)))
   ((null (consp p)) (pathname p))
