@@ -57,7 +57,7 @@
               (PROGN (setq |n| (QCAR |l|)) 'T) (INTEGERP |n|))
          (|displayComp| (setq |$level| |n|)))
         ('T
-         (SAY            "Correct format: (level n) where n is the level you want to go to"           )))))))
+         (SAY            "Correct format: (level n) where n is the level you want to go to"           ))))))
 
 ;
 ;UP() == up()

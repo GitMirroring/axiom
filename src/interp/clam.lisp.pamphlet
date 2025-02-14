@@ -2298,7 +2298,7 @@
                                 (APPEND (|rightJustifyString| |n| 6)
                                         (CONS '|  |
                                          (CONS |fn| (CONS '|: | NIL)))))
-                            (|pp| |args|))))))))))
+                            (|pp| |args|)))))))))
 
 ;constructor2ConstructorForm x ==
 ;  VECP x => x.0

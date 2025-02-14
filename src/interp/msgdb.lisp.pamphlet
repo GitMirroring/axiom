@@ -703,7 +703,7 @@
 
 (defun |keyedSystemError| (|key| |args|)
   (|sayKeyedMsg| "Internal Error" nil)
-  (|breakKeyedMsg| |key| |args|)))
+  (|breakKeyedMsg| |key| |args|))
 
 ;systemErrorHere functionName ==
 ;  keyedSystemError("S2GE0017",[functionName])

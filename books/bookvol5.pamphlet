@@ -3491,7 +3491,7 @@ it shows up as
 \begin{chunk}{defun monitorX}
 (defun monitorX (args funct opts)
  (declare (special |$monitorDepth| |$depthAlist|))
-  (monitorXX args funct opts |$monitorDepth| |$depthAlist|))))
+  (monitorXX args funct opts |$monitorDepth| |$depthAlist|))
 
 \end{chunk}
 
@@ -30264,7 +30264,7 @@ This function is funcalled from code constructed by {\bf coerceByTable}.
   (when (and (eq (first t2) '|SimpleAlgebraicExtension|)
              (equal (second t2) (|objMode| triple)))
     (unless (setq x (|coerceInt| triple (third t2)))
-     (|coerceInt| x t2))))))
+     (|coerceInt| x t2)))))
 
 \end{chunk}
 
@@ -49560,7 +49560,7 @@ Map the 2nd and the 4th quadrants to first and third quadrants.
 \begin{chunk}{defun cgammaG 0}
 (defun cgammaG (real imag)
   (- (+ (log (* 2 Pi)) (* Pi imag))
-     (* (* (complex 0.0 1.0) Pi) (- real 0.5))))))
+     (* (* (complex 0.0 1.0) Pi) (- real 0.5))))
 
 \end{chunk}
 
@@ -50738,7 +50738,7 @@ up to overflow.  See Hart and Cheney.
 \calls{rbesselj}{BesselJ}
 \begin{chunk}{defun rbesselj}
 (defun rbesselj (n x)
-  (c-to-r (BesselJ n x)) ))
+  (c-to-r (BesselJ n x)))
 
 \end{chunk}
 
@@ -50757,7 +50757,7 @@ up to overflow.  See Hart and Cheney.
 \calls{rbesseli}{BesselI}
 \begin{chunk}{defun rbesseli}
 (defun rbesseli (n x)
-  (c-to-r (BesselI n x)) ))
+  (c-to-r (BesselI n x)))
 
 \end{chunk}
 
