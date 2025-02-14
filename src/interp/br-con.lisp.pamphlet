@@ -14692,18 +14692,14 @@
 ;  n = 1 => SUBSTRING(line,k + 1,charPosition($tick,line,k + 1) - k - 1)
 ;  dbPart(line,n - 1,charPosition($tick,line,k + 1))
 
-(defun |dbPart| (|line| |n| |k|)
+(defun |dbPart| (|line| |n| |k|
+       			&aux (|m| (min (+ |k| 1) (length line)))
+       			     (|x| (|charPosition| |$tick| |line| |m|)))
   (declare (special |$tick|))
   (COND
-    ((EQL |n| 1)
-     (SUBSTRING |line| (+ |k| 1)
-         (-
-             (-
-                 (|charPosition| |$tick| |line| (+ |k| 1)) |k|)
-             1)))
-    (t
-     (|dbPart| |line| (- |n| 1)
-         (|charPosition| |$tick| |line| (+ |k| 1))))))
+    ((or (EQL |n| 1) (eql |x| (length |line|)))
+     (SUBSTRING |line| |m| (- |x| |m|)))
+    (t (|dbPart| |line| (- |n| 1) |x|))))
 
 ;dbXParts(line,n,m) ==
 ;  [.,nargs,:r] := dbParts(line,n,m)
