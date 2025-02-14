@@ -63625,7 +63625,7 @@ There are 8 parts of an htPage:
         (t
           (setq argTailPart
            (apply #'concat
-            (loop for x in (ifcdr args) collect (concat (cons "," x)))))
+            (loop for x in (ifcdr args) collect (apply #'concat (cons "," x)))))
           (apply #'concat (list "(" (car args) argTailPart ")")))))
       (setq typeForm
        (or (catch 'spad_reader (|unabbrev| (|mkConform| kind name argString)))
