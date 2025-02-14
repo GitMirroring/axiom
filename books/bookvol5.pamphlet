@@ -22066,7 +22066,7 @@ of the form ('expression expr position)
    (progn
     (setq parts0 (|pfParts| pform))
     (setq parts1 (loop for p in parts0 collect (funcall f p)))
-    (if (reduce #'(lambda (u v) (and u v)) (mapcar #'eq parts0 parts1))
+    (if (reduce #'(lambda (u v) (and u v)) (mapcar #'eq parts0 parts1) :initial-value t)
      pform
      (|pfTree| (|pfAbSynOp| pform) parts1))))))
 
@@ -62509,7 +62509,8 @@ There are 8 parts of an htPage:
       (setq u
        (reduce #'concat
         (loop for x in (|dbString2Words| filter) 
-              collect (|string2Constructor| x))))
+              collect (|string2Constructor| x))
+	      :initial-value ""))
       (|conSpecialString?| u t)))))))
 
 \end{chunk}
