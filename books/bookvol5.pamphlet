@@ -14245,7 +14245,7 @@ This function performs those setup commands.
                            (rpages 1000)
                            (hole 2000) )
   ;; initialize AKCL memory allocation parameters
-  #+:AKCL
+  #+:nil
   (progn
     (system:allocate 'cons cons)
     (system:allocate 'fixnum fixnum)
@@ -14257,7 +14257,7 @@ This function performs those setup commands.
     (system:allocate-contiguous-pages cpages)
     (system:allocate-relocatable-pages rpages)
     (system:set-hole-size hole))
-  #-:AKCL
+  #-:nil
   nil)
 
 \end{chunk}
