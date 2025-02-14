@@ -664,7 +664,7 @@ ${SAVESYS}:	${DEPSYS} ${OBJS} ${OUT}/bookvol5.${O} ${OUT}/util.${O} \
 	@ echo OBJ= ${OBJ} 
 	@ echo MNT= ${MNT} 
 	@ echo O=${O} LISP=${LISP} BYE=${BYE}
-	@ cp -p ${OUT}/*.fn ${MID}
+	@ find ${OUT} -name "*.fn" -exec cp {} ${MID} \;
 	@ cp -p ${SRC}/doc/msgs/s2-us.msgs ${SPAD}/doc/msgs
 	@ echo '${PROCLAIMS}' > ${OUT}/makeint.lisp
 	@ echo '(load "${OUT}/nocompil")' >> ${OUT}/makeint.lisp
@@ -681,7 +681,7 @@ ${SAVESYS}:	${DEPSYS} ${OBJS} ${OUT}/bookvol5.${O} ${OUT}/util.${O} \
           '(quote ($(patsubst %, "%", ${NAGBROBJS})))'  \
           '"${SPAD}"  "${LSP}" "${SRC}" "${INT}"' \
           '"${OBJ}" "${MNT}" "${SYS}")' >> ${OUT}/makeint.lisp
-	@ echo '(in-package "SCRATCHPAD-COMPILER")' >> ${OUT}/makeint.lisp
+	@ echo '(make-package "SCRATCHPAD-COMPILER")' >> ${OUT}/makeint.lisp
 	@ echo '(boot::set-restart-hook)' >> ${OUT}/makeint.lisp
 	@ echo '(in-package "BOOT")' >> ${OUT}/makeint.lisp
 	@ echo '(load "${INT}/algebra/warm.data")' >> ${OUT}/makeint.lisp
