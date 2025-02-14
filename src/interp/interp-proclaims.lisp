@@ -81,7 +81,7 @@
             BOOT::|bcDrawIt2| BOOT::|charybdis| BOOT::|bcMkFunction|
             BOOT::|charyTop| BOOT::|bcDrawIt|
             BOOT::|f01qcfDefaultSolve| BOOT::|e02zafDefaultSolve|
-            BOOT::|ncloopInclude0| VMLISP:$FCOPY)) 
+            BOOT::|ncloopInclude0|))
 (PROCLAIM
     '(FTYPE (FUNCTION (T T T T T T) *) BOOT::|e02befColdSolve|
             BOOT::|e02ahfDefaultSolve| BOOT::|e02akfDefaultSolve|
@@ -2596,7 +2596,7 @@
 (PROCLAIM '(FTYPE (FUNCTION (T T *) (VALUES T T)) VMLISP:MDEF)) 
 (PROCLAIM '(FTYPE (FUNCTION (T *) STRING) VMLISP:MAKE-FULL-CVEC)) 
 (PROCLAIM
-    '(FTYPE (FUNCTION (T T) *) BOOT::|bcInputMatrixByFormula|
+    '(FTYPE (FUNCTION (T T) *) VMLISP:$FCOPY BOOT::|bcInputMatrixByFormula|
             BOOT::|bcInputExplicitMatrix| BOOT::|htStringPad|
             BOOT::|evalAndRwriteLispForm| BOOT::|mkAtreeWithSrcPos|
             BOOT::|rwriteLispForm| BOOT::COMPILE-DEFUN BOOT::|doIt|
@@ -3382,4 +3382,4 @@
 (PROCLAIM
     '(FTYPE (FUNCTION NIL (VALUES T T)) BOOT::MAKE-CLOSEDFN-NAME
             BOOT::|genVariable| BOOT::|genSomeVariable|
-            BOOT::|genDomainVar| BOOT:GENVAR)) 
+            BOOT::|genDomainVar| BOOT:GENVAR))
