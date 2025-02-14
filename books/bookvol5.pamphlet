@@ -3073,7 +3073,7 @@ The trace1 function handles the options {\bf off}, {\bf stats},
               (when ops (setq ops (|getTraceOption| ops)) nil)
               (when lops 
                (setq lops (cdr (|getTraceOption| lops)))
-               (|untraceDomainLocalOps| constructor lops)))))))
+               (|untraceDomainLocalOps|)))))))
       ((and (< 1 (length options))
             (null (|hasOption| options '|nonquietly|)))
           (|throwKeyedMsg|
@@ -57614,8 +57614,7 @@ title and a function to call when pressed.
 \calls{bcSeriesByFormulaGen}{bcNotReady}
 \begin{chunk}{defun bcSeriesByFormulaGen}
 (defun |bcSeriesByFormulaGen| (htPage) 
- (declare (ignore htPage))
- (|bcNotReady|))
+ (|bcNotReady| htPage))
 
 \end{chunk}
 
