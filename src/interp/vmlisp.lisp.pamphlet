@@ -2453,7 +2453,7 @@ for primitive domains.        Also used by putInLocalDomainReferences and optCal
                T))
         ((ATOM V) NIL)
         ((EQUAL U V))
-        ((NOT (string> (write-to-string U) (write-to-string V))))))
+        ((NOT (string> (write-to-string U :escape t) (write-to-string V :escape t))))))
  
 (defmacro boot-equal (a b)
    (cond ((ident-char-lit a)
