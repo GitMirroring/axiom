@@ -1460,16 +1460,6 @@ function assumes that \\ can only appear as first character of name.
   (values longnames names)))
 
 
-#+(and :AKCL (not :dos))
-(in-package "COMPILER")
-#+(and :AKCL (not :dos))
-(defun gazonk-name ( &aux tem)
- "return the name of the intermediate compiler file"
- (dotimes (i 1000)
-  (setq tem (merge-pathnames (format nil "/tmp/gazonk~d.lsp" i)))
-  (unless (probe-file tem)
-    (return-from gazonk-name (pathname tem))))
- (error "1000 gazonk names used already!"))
 
 (in-package "BOOT")
 
