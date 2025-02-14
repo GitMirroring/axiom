@@ -71,6 +71,12 @@ interpreter or algebra uses has to (cough, cough) appear here.
 (make-package "BOOT")
 (in-package "BOOT")
 (lisp::use-package '("VMLISP" "LISP"))
+(when (find-package "CLTL1-COMPAT") (use-package "CLTL1-COMPAT"))
+(shadow "LIST")
+(defmacro list (&rest r &aux (l (length r)))
+  (let ((x (nthcdr (1- call-arguments-limit) r)))
+    (if x `(nconc (cl::list ,@(ldiff r x)) (list ,@x)) `(cl::list ,@r))))
+(deftype list nil 'cl::list)
 
 \end{chunk}
 FOAM is the intermediate language for the aldor compiler. FOAM

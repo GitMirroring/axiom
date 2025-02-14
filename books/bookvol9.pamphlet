@@ -4755,7 +4755,7 @@ Token at head of input stream.
 \defstruct{reduction}
 A reduction of a rule is any S-Expression the rule chooses to stack.
 \begin{chunk}{initvars}
-(defstruct (reduction (:type list))
+(defstruct (reduction (:type cl::list))
   (rule nil)            ; Name of rule
   (value nil))
 
@@ -7992,9 +7992,11 @@ which will walk the structure $Y$ looking for this constant.
     (setq argl (qrest c))
     (cond
      ((eq op '|Join|)
-       (cons '|Join|
-        (loop for x in argl
-         collect (|mkEvalableCategoryForm| x))))
+      `(|JoinInner|
+	 (list ,@(loop for x in argl collect (|mkEvalableCategoryForm| x)))
+	 (if (or (not (boundp '|$e|)) (null |$e|) |$InteractiveMode|)
+             |$CategoryFrame|
+             |$e|)))
      ((eq op '|DomainSubstitutionMacro|)
        (|mkEvalableCategoryForm| (cadr argl)))
      ((eq op '|mkCategory|) c)

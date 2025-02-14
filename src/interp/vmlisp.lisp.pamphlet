@@ -4577,7 +4577,7 @@ terminals and empty or at-end files.  In Common Lisp, we must assume record size
 
 (defmacro |float| (x &optional (y 0.0d0)) `(float ,x ,y))
 
-(define-function 'list1 #'list)
+(define-function 'list1 #'cl::list)
 (define-function '|not| #'NOT)
 
 (setf (get 'end_unit 'key) t)

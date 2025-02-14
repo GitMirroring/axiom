@@ -50639,7 +50639,7 @@ occupies two positions in the real array.
 \defun{vec2list}{vec2list}
 \begin{chunk}{defun vec2list 0}
 (defun vec2list (vec)
- (coerce vec 'list))
+ (coerce vec 'cl::list))
 
 \end{chunk}
 

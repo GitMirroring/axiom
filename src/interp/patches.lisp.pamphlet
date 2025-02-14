@@ -66,7 +66,7 @@ previous definition.
 (defun CATCHALL (a &rest b) a) ;; not correct but ok for now
 (defvar |$demoFlag| nil)
 
-(define-function '|construct| #'list) ;; NEEDED , SPAD-COMPILER generated Lisp code
+(define-function '|construct| #'cl::list) ;; NEEDED , SPAD-COMPILER generated Lisp code
 (define-function '|COMP,TRAN| #'comp-tran) ;called by |compWithMappingMode|
 
 (defvar |Undef| (function |Undef|)) ;needed in NewbFVectorCopy
