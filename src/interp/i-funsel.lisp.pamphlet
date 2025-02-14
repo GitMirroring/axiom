@@ -4923,7 +4923,7 @@ the types A and B themselves are not sorted by preference.
                    (t
                     (setq |st|
                              (NREVERSE (NCONC |haventvars| |havevars|)))
-                    (SORT |st| #'|mmCatComp|)))))))))))
+                    (STABLE-SORT |st| #'|mmCatComp|)))))))))))
 
 ;mmCatComp(c1, c2) ==
 ;  b1 := ASSQ(CADR c1, $Subst)
