@@ -1,4 +1,5 @@
 \documentclass{article}
+\UseRawInputEncoding
 \usepackage{axiom}
 \setlength{\textwidth}{400pt}
 \begin{document}
