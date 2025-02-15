@@ -14697,7 +14697,7 @@
        			     (|x| (|charPosition| |$tick| |line| |m|)))
   (declare (special |$tick|))
   (COND
-    ((or (EQL |n| 1) (eql |x| (length |line|)))
+    ((EQL |n| 1)
      (SUBSTRING |line| |m| (- |x| |m|)))
     (t (|dbPart| |line| (- |n| 1) |x|))))
 
