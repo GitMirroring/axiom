@@ -28,6 +28,7 @@ rebuild: ${INT}/algebra/*.nrlib/code.o
 	@ (cd ${INT}/algebra ; \
            echo ')lisp (make-databases "" nil)' | ${INTERPSYS} )
 	@ cp -pr ${INT}/algebra/*.daase ${MNT}/${SYS}/algebra
+	@ touch $@
 
 \end{chunk}
 \section{summary}
@@ -108,7 +109,7 @@ clean:
 	@echo se08 cleaning ${SRC}/etc
 	@rm -rf ${MID}
 	@rm -rf ${DOC}
-	@rm -f Makefile Makefile.dvi
+	@rm -f Makefile Makefile.dvi rebuild
 
 \end{chunk}
 \eject
