@@ -651,7 +651,7 @@ ${SAVESYS}:	${DEPSYS} ${OBJS} ${OUT}/bookvol5.${O} ${OUT}/util.${O} \
 		${NAGBROBJS} \
 	        ${LOADSYS} \
 		${SRC}/doc/msgs/s2-us.msgs \
-	        ${INT}/algebra/warm.data
+	        | ${INT}/algebra/warm.data
 	@ echo si004 invoking make in `pwd` with parms:
 	@ echo SYS= ${SYS} 
 	@ echo LSP= ${LSP} 
