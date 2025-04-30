@@ -4,8 +4,8 @@
 \newcommand{\VolumeName}{Volume 15: The Sane Compiler}
 
 % Latex open file limits exceeded. Allocate more
-\usepackage{etex}    % fix No room for a new \dimen
-\reserveinserts{30}  % fix No room for a new \dimen
+%\usepackage{etex}    % fix No room for a new \dimen
+%\reserveinserts{30}  % fix No room for a new \dimen
 
 % We want an index by type of information
 \usepackage{imakeidx} 
