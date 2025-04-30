@@ -2161,6 +2161,31 @@ clean:
 
 \end{chunk}
 
+\begin{chunk}{gcl-external}
+# gcl version cygwin
+OUT=${OBJ}/${SYS}/bin
+
+all: gcldir
+	@echo 1 building ${LSP} ${GCLVERSION}
+
+${BOOKS}/tangle1.lisp: ${BOOKS}/tangle.lisp
+	cp $< $@
+
+${OUT}/lisp: ${BOOKS}/tangle1.lisp | ${GCL}
+	echo "(progn \
+		     (load (compile-file \"${BOOKS}/tangle1.lisp\"))\
+		     (compiler::emit-fn t)(setq si::*code-block-reserve* (make-array 40000000 :element-type 'character :static t))\
+		     (when (fboundp 'si::sgc-on)(si::sgc-on nil))\
+		     (si::save-system \"${OUT}/lisp\"))" | ${GCL}
+
+gcldir: ${OUT}/lisp
+	@echo 13 finished system build on `date` | tee >gcldir
+
+clean:
+	@echo 17 cleaning ${LSP}/gcldir
+	@( rm -f ${OUT}/lisp gcldir )
+
+\end{chunk}
 
 
 \eject

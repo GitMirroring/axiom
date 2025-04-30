@@ -67,8 +67,9 @@ BYE:=bye
 #GCLVERSION=gcl-2.6.9
 #GCLVERSION=gcl-2.6.10
 #GCLVERSION=gcl-2.6.11
-GCLVERSION=gcl-2.6.12
+#GCLVERSION=gcl-2.6.12
 #GCLVERSION=gcl-2.6.13pre
+GCLVERSION=gcl-external
 GCLDIR:=${LSP}/${GCLVERSION}
 GCLOPTS="--enable-vssize=65536*2 --disable-xgcl --disable-tkconfig"
 LISP:=lsp
@@ -139,7 +140,7 @@ ZIPS=${ZIPS}
 all: rootdirs axiom.sty $(BOOKS)/tanglec libspad lspdir input_files book_files src_files
 	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
 	@ echo 2 Environment '${ENV}'
-	@ ${ENV} $(MAKE) -f $<
+#	@ ${ENV} $(MAKE) -f $<
 	@ echo 3 finished system build on `date` | tee >lastBuildDate
 
 Makefile.${SYS}: Makefile.pamphlet ${BOOKS}/tanglec
@@ -159,8 +160,8 @@ Makefile.pdf: Makefile.pamphlet $(BOOKS)/tanglec
 
 src_files: Makefile.${SYS} ${MNT}/${SYS}/doc/src/root.Makefile.pdf \
 	   ${MNT}/${SYS}/doc/dvipdfm.def ${MNT}/${SYS}/doc/changepage.sty $(BOOKS)/tanglec
- 	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
- 	@ echo 2 Environment '${ENV}'
+	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
+	@ echo 2 Environment '${ENV}'
 	@ ${ENV} $(MAKE) -f $<
 
 lspdir: ${LSP}/Makefile
