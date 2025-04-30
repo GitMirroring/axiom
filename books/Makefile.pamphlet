@@ -85,7 +85,7 @@ NEWSLETTERS=Newsletter.September85.pdf \
 
 DESIGN=AldorDesign.pdf
 
-PROVE=${PROOFS}/acl2.lisp ${PROOFS}/coq.lisp
+PROVE=${PROOFS}/acl2.lisp ${PROOFS}/coq.v
 
 OTHER=  ${PDF}/refcard.pdf     ${PDF}/endpaper.pdf    ${PDF}/rosetta.pdf
 
