@@ -1417,14 +1417,14 @@
 --R The current setting is indicated within the list.  This option determines 
 --R the special characters used for algebraic output.  This is what the
 --R current choice of special characters looks like:
---R   ulc is shown as ⁄          urc is shown as ø       
---R   llc is shown as ¿          lrc is shown as Ÿ       
---R   vbar is shown as ≥         hbar is shown as ƒ      
+--R   ulc is shown as √ö          urc is shown as ¬ø       
+--R   llc is shown as √Ä          lrc is shown as √ô       
+--R   vbar is shown as ¬≥         hbar is shown as √Ñ      
 --R   quad is shown as NIL       lbrk is shown as [      
 --R   rbrk is shown as ]         lbrc is shown as {      
---R   rbrc is shown as }         ttee is shown as ¬      
---R   btee is shown as ¡         rtee is shown as ¥      
---R   ltee is shown as √         ctee is shown as ≈      
+--R   rbrc is shown as }         ttee is shown as √Ç      
+--R   btee is shown as √Å         rtee is shown as ¬¥      
+--R   ltee is shown as √É         ctee is shown as √Ö      
 --R   bslash is shown as \    
 --E 89
 
