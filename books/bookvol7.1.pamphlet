@@ -5871,15 +5871,15 @@ For information on related topics, see
 \pastebutton{TwoDimensionalArrayXmpPageFull1}{\hidepaste}
 \tab{5}\spadcommand{arr : ARRAY2 INT := new(5,4,0)\bound{arr }}
 \indentrel{3}\begin{verbatim}
-        Ú0  0  0  0¿
-        ³          ³
-        ³0  0  0  0³
-        ³          ³
-   (1)  ³0  0  0  0³
-        ³          ³
-        ³0  0  0  0³
-        ³          ³
-        À0  0  0  0Ù
+        Ãš0  0  0  0Â¿
+        Â³          Â³
+        Â³0  0  0  0Â³
+        Â³          Â³
+   (1)  Â³0  0  0  0Â³
+        Â³          Â³
+        Â³0  0  0  0Â³
+        Â³          Â³
+        Ã€0  0  0  0Ã™
                       Type: TwoDimensionalArray Integer
 \end{verbatim}
 \indentrel{-3}\end{paste}\end{patch}
@@ -5915,15 +5915,15 @@ For information on related topics, see
 \pastebutton{TwoDimensionalArrayXmpPageFull3}{\hidepaste}
 \tab{5}\spadcommand{arr\free{arr1 }}
 \indentrel{3}\begin{verbatim}
-        Ú17  0  0  0¿
-        ³           ³
-        ³0   0  0  0³
-        ³           ³
-   (3)  ³0   0  0  0³
-        ³           ³
-        ³0   0  0  0³
-        ³           ³
-        À0   0  0  0Ù
+        Ãš17  0  0  0Â¿
+        Â³           Â³
+        Â³0   0  0  0Â³
+        Â³           Â³
+   (3)  Â³0   0  0  0Â³
+        Â³           Â³
+        Â³0   0  0  0Â³
+        Â³           Â³
+        Ã€0   0  0  0Ã™
                       Type: TwoDimensionalArray Integer
 \end{verbatim}
 \indentrel{-3}\end{paste}\end{patch}
@@ -125275,12 +125275,12 @@ on the RISC System/6000.
 \newline
 {\tt CO\\vspace\{-18\}2\\vspace\{-32\} + CaO ->}\newline
 {\tt CaCO\\vspace\{-18\}3\\vspace\{-32\}\\newline}\newline
-{\tt R\\space\{-1\}~\\vspace\{-18\}æv\\vspace\{-32\}}\newline
+{\tt R\\space\{-1\}~\\vspace\{-18\}Ã¦v\\vspace\{-32\}}\newline
 {\tt \\hspace\{4\}-\\hspace\{8\}---\\hspace\{-12\}}\newline
 {\tt \\vspace\{-32\}1\\space\{-1\}\\vspace\{-7\}2}\newline
 {\tt \\vspace\{-36\}\\hspace\{8\}g\\space\{-1\}~}\newline
-{\tt \\vspace\{-18\}æv\\vspace\{-32\}\\hspace\{2\}R}\newline
-{\tt \\space\{-1\}~ = T\\vspace\{-18\}æv\\vspace\{-32\}}\newline
+{\tt \\vspace\{-18\}Ã¦v\\vspace\{-32\}\\hspace\{2\}R}\newline
+{\tt \\space\{-1\}~ = T\\vspace\{-18\}Ã¦v\\vspace\{-32\}}\newline
 {\tt \\vspace\{-25\}}
 \end{paste}
 \endImportant
@@ -125363,12 +125363,12 @@ x\hspace{1}x\hspace{2}x\hspace{3}x\hspace{4}x
 \newline
 CO\vspace{-18}2\vspace{-32} + CaO ->
 CaCO\vspace{-18}3\vspace{-32}\newline
-R\space{-1}~\vspace{-18}æv\vspace{-32}
+R\space{-1}~\vspace{-18}Ã¦v\vspace{-32}
 \hspace{4}-\hspace{8}---\hspace{-12}
 \vspace{-32}1\space{-1}\vspace{-7}2
 \vspace{-36}\hspace{8}g\space{-1}~
-\vspace{-18}æv\vspace{-32}\hspace{2}R
-\space{-1}~ = T\vspace{-18}æv\vspace{-32}
+\vspace{-18}Ã¦v\vspace{-32}\hspace{2}R
+\space{-1}~ = T\vspace{-18}Ã¦v\vspace{-32}
 \vspace{-25}
 \end{paste}
 \end{patch}
@@ -125386,12 +125386,12 @@ R\space{-1}~\vspace{-18}æv\vspace{-32}
 \newline
 {\tt CO\\vspace\{-18\}2\\vspace\{-32\} + CaO ->}\newline
 {\tt CaCO\\vspace\{-18\}3\\vspace\{-32\}\\newline}\newline
-{\tt R\\space\{-1\}~\\vspace\{-18\}æv\\vspace\{-32\}}\newline
+{\tt R\\space\{-1\}~\\vspace\{-18\}Ã¦v\\vspace\{-32\}}\newline
 {\tt \\hspace\{4\}-\\hspace\{8\}---\\hspace\{-12\}}\newline
 {\tt \\vspace\{-32\}1\\space\{-1\}\\vspace\{-7\}2}\newline
 {\tt \\vspace\{-36\}\\hspace\{8\}g\\space\{-1\}~}\newline
-{\tt \\vspace\{-18\}æv\\vspace\{-32\}\\hspace\{2\}R}\newline
-{\tt \\space\{-1\}~ = T\\vspace\{-18\}æv\\vspace\{-32\}}\newline
+{\tt \\vspace\{-18\}Ã¦v\\vspace\{-32\}\\hspace\{2\}R}\newline
+{\tt \\space\{-1\}~ = T\\vspace\{-18\}Ã¦v\\vspace\{-32\}}\newline
 {\tt \\vspace\{-25\}}
 \end{paste}
 \end{patch}
