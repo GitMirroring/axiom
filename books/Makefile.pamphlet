@@ -97,7 +97,8 @@ ${PDF}/master:
 	@ echo ==================================
 	@ echo COPY GIT HEAD TO DOC
 	@ echo ==================================
-	@ cp ${SPD}/.git/refs/heads/master ${PDF}/master
+	@ ! [ -e  ${SPD}/.git/refs/heads/master ] || cp ${SPD}/.git/refs/heads/master $@
+	@ touch $@
 
 ${BOOKS}/tanglec: ${BOOKS}/tanglec.c
 	@ gcc -o $@ $<
