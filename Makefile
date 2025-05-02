@@ -137,7 +137,7 @@ WEAVE=${WEAVE} \
 XLIB=${XLIB} \
 ZIPS=${ZIPS} 
 
-all: rootdirs axiom.sty $(BOOKS)/tanglec libspad lspdir input_files book_files src_files
+all: rootdirs axiom.sty $(BOOKS)/tanglec libspad input_files book_files src_files
 	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
 	@ echo 2 Environment '${ENV}'
 #	@ ${ENV} $(MAKE) -f $<
@@ -163,34 +163,6 @@ src_files: Makefile.${SYS} ${MNT}/${SYS}/doc/src/root.Makefile.pdf \
 	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
 	@ echo 2 Environment '${ENV}'
 	@ ${ENV} $(MAKE) -f $<
-
-lspdir: ${LSP}/Makefile
-	@echo 19 making ${LSP}
-	@mkdir -p ${OBJ}/${SYS}/bin
-	@mkdir -p ${OBJ}/${SYS}/lsp
-	@echo =====================================
-	@echo lsp BUILDING GCL COMMON LISP
-	@echo =====================================
-	(cd lsp ; ${ENV} DESTDIR= ${MAKE} gcldir ) 
-	@(cp ${OBJ}/${SYS}/bin/lisp ${SPADBIN}/${GCLVERSION})
-
-${LSP}/Makefile: ${BOOKS}/tanglec ${LSP}/Makefile.pamphlet
-	@echo 20 making ${LSP}/Makefile from ${LSP}/Makefile.pamphlet
-	@( cd lsp ; \
-	 ${EXTRACT} Makefile.pamphlet ; \
-	 if [ "${GCLVERSION}" != "gcl-2.4.1" ] ; then \
-	 ${BOOKS}/tanglec Makefile.pamphlet ${GCLVERSION} >Makefile ; \
-         fi ; \
-	 cp Makefile.pdf ${MNT}/${SYS}/doc/src/lsp.Makefile.pdf )
-
-lspclean:
-	@echo 21 cleaning ${OBJ}/${SYS}/ccl
-	@rm -rf ${LSP}/${GCLVERSION}
-	@rm -rf ${INT}/ccl
-	@rm -rf ${OBJ}/${SYS}/ccl
-	@rm -rf ${LSP}/gcldir
-	@rm -f ${LSP}/Makefile ${LSP}/Makefile.dvi
-
 
 libspad: rootdirs $(BOOKS)/tanglec
 	@ echo 11a making libspad
