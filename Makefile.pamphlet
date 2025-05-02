@@ -87,7 +87,7 @@ Note that make cannot handle recursively calling itself in the same
 directory so we have to expand the serial forms inline. Cheesy.
 
 \begin{chunk}{parallel}
-all: rootdirs axiom.sty $(BOOKS)/tanglec libspad lspdir input_files book_files src_files
+all: rootdirs axiom.sty $(BOOKS)/tanglec libspad input_files book_files src_files
 	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
 	@ echo 2 Environment '${ENV}'
 #	@ ${ENV} $(MAKE) -f $<
@@ -113,8 +113,6 @@ src_files: Makefile.${SYS} ${MNT}/${SYS}/doc/src/root.Makefile.pdf \
 	@ echo 1 making a ${SYS} system, PART=${PART} SUBPART=${SUBPART}
 	@ echo 2 Environment '${ENV}'
 	@ ${ENV} $(MAKE) -f $<
-
-\getchunk{lsp}
 
 libspad: rootdirs $(BOOKS)/tanglec
 	@ echo 11a making libspad
