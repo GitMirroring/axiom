@@ -89,7 +89,7 @@ Yet another version of GCL requires another change. It used to read:
 #+KCL
 (progn
   (clines "extern double plus_infinity(), minus_infinity(), NANQ();")
-  (clines "extern double sock_get_float();")
+  (clines "extern double sock_get_float(int);")
 \end{chunk}
 GCL may pass strings by value.  [[sock_get_string_buf]] should fill
 string with data read from connection, therefore needs address of
