@@ -5939,7 +5939,6 @@ $$
 \displaystyle
 {{\left({{\left({4 \  z}+{4 \  y}+{{12}\  x}\right)}\ {\sqrt{y}}}+
 {{\left({4 \  z}+{{12}\  y}+{4 \  x}\right)}\ {\sqrt{x}}}\right)}\ {\sqrt{z}}}+
- 
 \\
 \\
 \displaystyle
@@ -5958,7 +5957,6 @@ $$
 \displaystyle
 {{\left({4 \  z}+{4 \  y}+{{12}\  x}\right)}\ {\sqrt{y \  z}}}+
 {{\left({4 \  z}+{{12}\  y}+{4 \  x}\right)}\ {\sqrt{x \  z}}}+
- 
 \\
 \\
 \displaystyle
@@ -6456,7 +6454,6 @@ $$
 {2 \  z \ {{F_{, 3}}\left({{x \left({z}\right)}, {y \left({z}\right)},
  {z^2}}\right)}}+{{{y_{\ }^{,}}\left({z}\right)}\ {{F_{, 2}}\left({{x 
 \left({z}\right)}, {y \left({z}\right)}, {z^2}}\right)}}+
- 
 \\
 \\
 \displaystyle
@@ -33710,7 +33707,6 @@ given by cyclic shifts of the indeterminates.
 $$
 \begin{array}{@{}l}
 \left[
-
 \begin{array}{@{}l}
 \displaystyle
 \left[ 
@@ -36743,7 +36739,6 @@ c -f
 {b -f}, 
 {a+d+e+{3 \  f}} 
 \right\}
-
 \right]
 \end{array}
 $$

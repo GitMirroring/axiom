@@ -44,7 +44,6 @@ a}}}+ a}\right)}}+
 \displaystyle
 {{12}\ {b^2}\ {x^2}\ {\arctan \left({{{2 \ {\sqrt{3}}\ {{\root{3}\of{a}}^
 2}\ {\root{3}\of{{b \  x}+ a}}}+{a \ {\sqrt{3}}}}\over{3 \  a}}\right)}}+
- 
 \\
 \\
 \displaystyle
@@ -5525,7 +5524,6 @@ $$
 \displaystyle
 {{\left({{\left({4 \  z}+{4 \  y}+{{12}\  x}\right)}\ {\sqrt{y}}}+
 {{\left({4 \  z}+{{12}\  y}+{4 \  x}\right)}\ {\sqrt{x}}}\right)}\ {\sqrt{z}}}+
- 
 \\
 \\
 \displaystyle
@@ -5544,7 +5542,6 @@ $$
 \displaystyle
 {{\left({4 \  z}+{4 \  y}+{{12}\  x}\right)}\ {\sqrt{y \  z}}}+
 {{\left({4 \  z}+{{12}\  y}+{4 \  x}\right)}\ {\sqrt{x \  z}}}+
- 
 \\
 \\
 \displaystyle
@@ -6067,7 +6064,6 @@ $$
 {2 \  z \ {{F_{, 3}}\left({{x \left({z}\right)}, {y \left({z}\right)},
  {z^2}}\right)}}+{{{y_{\ }^{,}}\left({z}\right)}\ {{F_{, 2}}\left({{x 
 \left({z}\right)}, {y \left({z}\right)}, {z^2}}\right)}}+
- 
 \\
 \\
 \displaystyle
