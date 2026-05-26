@@ -26902,7 +26902,7 @@ connect_to_local_server(char *server_name, int purpose, int time_out)
   memset(server[1].addr.u_addr.sa_data, 0,
          sizeof(server[1].addr.u_addr.sa_data));
   sock->addr.u_addr.sa_family = AF_UNIX;
-  strcpy(sock->addr.u_addr.sa_data, name);
+  strncpy(sock->addr.u_addr.sa_data,name,sizeof(sock->addr.u_addr.sa_data)-1);
   for(i=0; i<max_con; i++) {
     code = connect(sock->socket, &sock->addr.u_addr,
                    sizeof(sock->addr.u_addr));
