@@ -11653,6 +11653,7 @@ add flag identifiers as literals in the environment
 \usesdollar{substNames}{FormalMapVariableList}
 \begin{chunk}{defun substNames}
 (defun |substNames| (domainName viewName functorForm opalist)
+ #+(and gcl hppa)(declare (notinline subst)) ;limited to 8M stack 20260529
  (let (nameForDollar sel pos modemapform tmp0 tmp1)
  (declare (special |$FormalMapVariableList|))
   (setq functorForm (subst '$$ '$ functorForm))
